@@ -1,0 +1,132 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+/* ========= SECTION: CONTENTS =========
+
+   1. STYLE VARIABLES
+   2. UNIVERSALS
+   3. HEADER
+   4. SIGNED OUT INFORMATION
+
+========= SECTION: CONTENTS =========*/
+
+
+/* ========= SECTION 1: STYLE VARIABLES =========*/
+
+/* primary colors */
+$aqua: #00746b;
+$light-green: #acd373;
+$light-grey:#9C9C9C;
+
+$light-aqua: #B9D9D7;
+$aqua-midpoint:#73B370;
+$standard-padding:30px;
+
+/* ========= SECTION 2: UNIVERSALS =========*/
+
+body {
+	font-family: 'Noto Sans', sans-serif;	
+	height:100%;
+}
+
+
+/* bootstrap responsive adjustments*/
+	@media (min-width: 1200px) {
+	  .span12, .container {
+	    width: 1170px;
+	  }
+	}
+
+	@media (max-width: 978px) {
+	    body {
+	      padding:0;
+	    }
+	
+		.container{
+			padding:10px;
+		}
+
+	}
+
+
+.center-alignment {
+	text-align:center;
+}
+
+.green-text{
+	color:$light-green;
+}
+
+.subheading-text{
+	color:white !important;
+	font-size:11px;
+	text-decoration:underline;
+}
+
+/* ========= SECTION 3: HEADER =========*/
+
+.signed-out-header{
+	/* 1.65 adjustment is just to match psd design */
+	padding-top:$standard-padding*1.65;
+	height:90px;
+}
+
+.home-logo{
+	img {
+		height:55px;
+		width:204px;
+	}
+}
+
+.sign-in-button{
+	font-size:23px;
+	font-weight:700;
+	color:$light-grey;
+}
+
+.sign-in-button:hover{
+	text-decoration:none;
+	color:$aqua;
+}
+
+/* ========= SECTION 4: SIGNED OUT INFORMATION =========*/
+
+.main-information {
+	font-size:15px;
+	min-height:340px;
+	background-color:$aqua;
+	color:white;
+	h1 {
+		font-size:30px;
+		line-height:45px;
+	}
+	a {
+		color:$light-green;
+	}
+	p{
+		color:$light-aqua;
+	}
+}
+
+
+.lead-text{
+	padding-top:120px;
+}
+
+
+
+.sign-up-button{
+	min-width:99%;
+	padding: 3px 15px;
+    background: $light-green;
+	color:$aqua;
+	border-radius: 4px;
+}
+
+.sign-up-button:hover, .sign-up-button:focus {
+    background: $aqua-midpoint;
+    color: $light-green;
+    border: solid 1px $aqua-midpoint;
+    text-decoration: none;
+
+}
