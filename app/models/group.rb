@@ -6,4 +6,5 @@ class Group < ActiveRecord::Base
   has_many :users, through: :memberships
   accepts_nested_attributes_for :memberships
   
+  has_many :discussions
 end
