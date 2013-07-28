@@ -21,7 +21,7 @@ $aqua: #00746b;
 $light-green: #acd373;
 $light-grey:#9C9C9C;
 
-
+$text-color: #0f1419;
 $background-grey: #cbd0d5;
 $green:  #39b54a;
 $light-aqua: #B9D9D7;
@@ -36,6 +36,7 @@ $orange: #E8A00C;
 body {
 	font-family: 'Noto Sans', sans-serif;	
 	height:100%;
+	font-size:12px;
 }
 
 
@@ -248,6 +249,7 @@ input {
 
 .box-info{
 	padding:20px;
+	color: $text-color;
 }
 
 .small-text{
@@ -256,8 +258,13 @@ input {
 }
 
 .box-text{
-	color:$aqua;
+	line-height:16px;
 	font-size:12px;
+}
+
+
+.group-name{
+	margin-bottom:13px;
 }
 
 /* ========= SECTION 7: GROUPS SHOW PAGE =========*/

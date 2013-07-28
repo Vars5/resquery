@@ -1,9 +1,10 @@
-%h1 Groups#show
+.dashboard
+	%h4= @group.name 
+	%p(class="small-text")= @group.description
+	%hr 
 
-%h3= @group.name
-%h4='Group Description:'+ @group.description
-%br
-%h5='Add comment partials here'
+-@group.discussions.each do |discussion|
+	=discussion.title
 
 - if can? :manage, :all
 	.membership_invite_form
