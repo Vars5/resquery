@@ -1,0 +1,13 @@
+.footer
+	.container
+		.row
+			.offset1.span10
+				%ul(class="inline")
+					%li
+						%strong resQuery
+					%li= link_to 'About ', about_path
+					%li= mail_to '#', 'Contact ', :target => "_blank"
+					%li(class="pull-right")
+						We wish you a  happy
+						= Time.now.localtime.strftime("%A")
+						!
