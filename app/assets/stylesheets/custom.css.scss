@@ -9,6 +9,7 @@
    4. FOOTER
    5. SIGNED OUT INFORMATION
    6. LEFT BOARD
+   7. GROUPS SHOW PAGE
 
 ========= SECTION: CONTENTS =========*/
 
@@ -27,8 +28,10 @@ $light-aqua: #B9D9D7;
 $fade-aqua: #E8F2F2;
 $aqua-midpoint:#73B370;
 $standard-padding:30px;
+$orange: #E8A00C;
 
 /* ========= SECTION 2: UNIVERSALS =========*/
+
 
 body {
 	font-family: 'Noto Sans', sans-serif;	
@@ -231,6 +234,7 @@ input {
 	padding-top:35px;
 	h4{
 		color:$aqua;
+		font-size:19px;
 	}
 }
 
@@ -247,6 +251,26 @@ input {
 }
 
 .small-text{
-	font-size:11px;
+	font-size:12px;
 	color:$light-grey;
+}
+
+.box-text{
+	color:$aqua;
+	font-size:12px;
+}
+
+/* ========= SECTION 7: GROUPS SHOW PAGE =========*/
+
+.right-group-header{
+	font-size:12px;
+	width:100px;
+}
+
+.groups-area{
+	h4{
+		font-weight:400;
+		color:$orange;
+		font-size:16px;
+	}
 }
