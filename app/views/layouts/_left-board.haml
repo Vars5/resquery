@@ -1,0 +1,14 @@
+.left-board
+	.logo
+		= link_to image_tag('menulogo.png'), root_path 
+	.menu-area
+		%ul(class="unstyled")
+			= link_to groups_path do
+				%li
+					%i(class="icon-comment")
+					&nbsp My Groups
+			= link_to groups_path do
+				%li
+					%i(class="icon-star")
+					&nbsp Progress		
+			

@@ -6,7 +6,9 @@
    1. STYLE VARIABLES
    2. UNIVERSALS
    3. HEADER
-   4. SIGNED OUT INFORMATION
+   4. FOOTER
+   5. SIGNED OUT INFORMATION
+   6. LEFT BOARD
 
 ========= SECTION: CONTENTS =========*/
 
@@ -18,7 +20,11 @@ $aqua: #00746b;
 $light-green: #acd373;
 $light-grey:#9C9C9C;
 
+
+$background-grey: #cbd0d5;
+$green:  #39b54a;
 $light-aqua: #B9D9D7;
+$fade-aqua: #E8F2F2;
 $aqua-midpoint:#73B370;
 $standard-padding:30px;
 
@@ -49,21 +55,47 @@ body {
 	}
 
 
+input {
+	width:95%;
+	border:1px solid $aqua !important;
+}
+
 .center-alignment {
 	text-align:center;
 }
+
+
 
 .green-text{
 	color:$light-green;
 }
 
-.subheading-text{
-	color:white !important;
-	font-size:11px;
-	text-decoration:underline;
+.light-aqua-text{
+	color:$light-aqua;
 }
 
+
+.pad-top{
+	padding-top:$standard-padding;
+}
+
+.pad-bottom{
+	padding-bottom:$standard-padding*1.5;
+}
+
+
 /* ========= SECTION 3: HEADER =========*/
+
+
+.signed-in-header{
+	padding:2px 0px;
+	height:20px;
+	background-color:$aqua;
+	font-size:10px;
+	a{
+		color:$light-aqua;
+	}
+}
 
 .signed-out-header{
 	/* 1.65 adjustment is just to match psd design */
@@ -89,10 +121,21 @@ body {
 	color:$aqua;
 }
 
-/* ========= SECTION 4: SIGNED OUT INFORMATION =========*/
+/* ========= SECTION 4: FOOTER =========*/
+
+.footer {
+	padding-top:90px;
+	font-size:12px;
+	a{
+		color:$light-grey;
+	}
+}
+
+
+/* ========= SECTION 5: SIGNED OUT INFORMATION =========*/
 
 .main-information {
-	font-size:15px;
+	font-size:12px;
 	min-height:340px;
 	background-color:$aqua;
 	color:white;
@@ -105,6 +148,10 @@ body {
 	}
 	p{
 		color:$light-aqua;
+		font-size:15px;
+	}
+	.subheading-text{
+		font-size:11px;
 	}
 }
 
@@ -113,7 +160,9 @@ body {
 	padding-top:120px;
 }
 
-
+.devise-padding{
+	padding-top:60px;
+}
 
 .sign-up-button{
 	min-width:99%;
@@ -121,12 +170,83 @@ body {
     background: $light-green;
 	color:$aqua;
 	border-radius: 4px;
+	border: solid 1px $aqua-midpoint;
 }
 
 .sign-up-button:hover, .sign-up-button:focus {
     background: $aqua-midpoint;
-    color: $light-green;
+
     border: solid 1px $aqua-midpoint;
     text-decoration: none;
 
+}
+
+.sign-in-page{
+	img{
+		height:100px;
+		width:100px;
+		padding-bottom:20px;
+	}
+}
+
+.width-adjust{
+	padding-left:2px;
+	width:98%;
+}
+
+/* ========= SECTION 6: LEFT BOARD =========*/
+
+
+.left-board{
+	min-height:100%;
+	a:hover{
+		text-decoration:none;
+	}
+}
+
+.logo{
+	padding-top:$standard-padding;
+	text-align:center;
+}
+
+.menu-area {
+	font-size:12px;
+	padding-top:$standard-padding;
+	a{
+		color:$aqua;
+	}
+	li {
+		padding:10px 0px 10px 10px;
+		
+	}	
+	li:hover{
+		background-color:$fade-aqua;
+		border-radius:4px;
+	}
+}
+
+/* ========= SECTION 6: DASHBOARD =========*/
+
+.dashboard{
+	padding-top:35px;
+	h4{
+		color:$aqua;
+	}
+}
+
+.box{
+	margin-top:10px;
+	width:100%;
+	height:190px;
+	background-color: $background-grey;
+	border-radius: 4px;
+}
+
+.box-info{
+	padding:20px;
+}
+
+.small-text{
+	font-size:11px;
+	color:$light-grey;
 }

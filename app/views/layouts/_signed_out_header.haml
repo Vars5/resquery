@@ -5,4 +5,9 @@
 				= link_to image_tag('logo.png'), root_path, :class => "home-logo"
 				.pull-right
 					%br
-					= link_to 'Sign in', new_user_session_path, :class => "sign-in-button"
+					
+					-# Just here for while i haven't build signed in pages
+					-if signed_in? 
+						= link_to 'Log Out', destroy_user_session_path, :method =>"DELETE", :class => "sign-in-button"
+					-else
+						= link_to 'Sign in', new_user_session_path, :class => "sign-in-button"
