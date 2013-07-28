@@ -20,5 +20,10 @@ class DiscussionsController < ApplicationController
   def show
     @group = Group.find(params[:group_id])
     @discussion = @group.discussions.find(params[:id])
+    
+#    @memberships = @group.users   
+    @comments = @discussion.comment_threads.order('created_at asc')
+    @new_comment = Comment.build_from(@discussion, current_user, "")
+    
   end
 end

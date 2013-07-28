@@ -36,6 +36,10 @@ gem 'haml-rails'
 
 gem 'simple_form'
 
+#comments
+gem 'acts_as_commentable_with_threading'
+
+
 =begin
 gem 'devise-async'
 foreman
@@ -45,8 +49,6 @@ uglifier
 #   gem 'rspec-rails'
 #   gem 'guard-rspec'
 
-#comments
-gem 'acts_as_commentable_with_threading'
 
 #A/B spilt testing
 gem 'split', require: 'split/dashboard'
