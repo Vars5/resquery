@@ -18,8 +18,8 @@ class DiscussionsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:group_id])
-    @discussion = @group.discussions.find(params[:id])
+    @group = Group.find(params[:id])
+    @discussion = Discussion.find(params[:id])
     
 #    @memberships = @group.users   
     @comments = @discussion.comment_threads.order('created_at asc')

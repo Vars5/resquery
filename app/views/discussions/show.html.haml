@@ -1,14 +1,17 @@
-%h1 Discussions#show
-%p Find me in app/views/discussions/show.html.haml
-
-.group
-	.show_discussion
-		%h3= @discussion.title
-		%h5= @discussion.description
+.dashboard
+	.group
+		.show_discussion
+			%h4= @discussion.title
+			%p= @discussion.description
 		
-	.comments
-		%h2 Comments
-		= render partial: 'comments/comment', collection: @comments, as: :comment
-		= render partial: 'comments/form', locals: { comment: @new_comment }
+		%hr
+		.comments
+			Discuss this message:
+			%br
+			%br
+			= render partial: 'comments/comment', collection: @comments, as: :comment
+			%br
+			%br
+			= render partial: 'comments/form', locals: { comment: @new_comment }
 
 

@@ -3,8 +3,16 @@
 	%p(class="small-text")= @group.description
 	%hr 
 
--@group.discussions.each do |discussion|
-	=discussion.title
+.updates
+	%h4 Latest Discussions
+
+.discussions
+	-@discussions.each do |discussion|
+		.discussion-unit
+			%b(class="discussion-title")= link_to discussion.title, discussion 
+			= link_to discussion.description, discussion
+			.pull-right
+				= discussion.created_at.strftime("%e %b")
 
 - if can? :manage, :all
 	.membership_invite_form

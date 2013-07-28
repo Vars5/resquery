@@ -27,6 +27,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @discussions = @group.discussions
   end
 
   def index
