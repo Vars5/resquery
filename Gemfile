@@ -33,8 +33,10 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 gem "bootstrap-will_paginate"
 gem "haml"
 gem 'haml-rails'
-
 gem 'simple_form'
+
+
+gem 'newrelic_rpm'
 
 #comments
 gem 'acts_as_commentable_with_threading'

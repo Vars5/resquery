@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   
   before_filter :authenticate_user!
+  authorize_resource :except => [:index, :show]
   
   def new
     @group = Group.new

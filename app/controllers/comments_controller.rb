@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
   
+  before_filter :authenticate_user!
+  
   def create
     @comment_hash = params[:comment]
     @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
