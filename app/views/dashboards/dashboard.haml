@@ -4,34 +4,30 @@
 	%p(class="small-text") Groups should always be progressing to to a more fundamental, practical and insightful understanding of the world
 	
 	%hr
-	.row-fluid
-		
-		.span4
-			.box
-				.box-info
-					%b The Templates Group
-					%p(class="box-text") Templates
-		.span4
-			.box
-				.box-info
-					%b The Financial Analysis Group
-		.span4
-			.box
-				.box-info
-					%b The Valuation Group
-					
-	.row-fluid				
-		.span4
-			.box
-				.box-info
-					%b The Management Consultant's toolkit
-		.span4
-			.box
-				.box-info
-					%b The Case Study Group
-					
-					
-		.span4
-			.box
-				.box-info
-					%b The Brand Management & Marketing Group
+	
+	-# Current Dashboard only lists 6 groups. Will need to have a long term fix for this later
+	
+	
+	-if @groups.count != 0
+		.row-fluid	
+			-@groups[0..2].each do |group|
+				.span4
+					=link_to group do
+						.box
+							.box-info
+								%b
+									%p(class="group-name")= group.name
+								%p(class="box-text")
+									= group.description
+
+	-if @groups.count > 3
+		.row-fluid	
+			-@groups[3..5].each do |group|
+				.span4
+					=link_to group do 
+						.box
+							.box-info
+								%b
+									%p(class="group-name")= group.name
+								%p(class="box-text")
+									= group.description

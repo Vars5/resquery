@@ -1,9 +1,18 @@
-%h1 Groups#show
+.dashboard
+	%h4= @group.name 
+	%p(class="small-text")= @group.description
+	%hr 
 
-%h3= @group.name
-%h4='Group Description:'+ @group.description
-%br
-%h5='Add comment partials here'
+.updates
+	%h4 Latest Discussions
+
+.discussions
+	-@discussions.each do |discussion|
+		.discussion-unit
+			%b(class="discussion-title")= link_to discussion.title, discussion 
+			= link_to discussion.description, discussion
+			.pull-right
+				= discussion.created_at.strftime("%e %b")
 
 - if can? :manage, :all
 	.membership_invite_form

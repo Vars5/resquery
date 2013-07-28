@@ -27,10 +27,13 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @discussions = @group.discussions
   end
 
   def index
-    @groups = current_user.groups.all
+    # Currently the Dashboard indexes all the groups
+    redirect_to root_path
+    @groups = current_user.groups
   end
   
   def destroy
