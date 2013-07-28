@@ -20,6 +20,20 @@ Resquery::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  #Mandrill Setting
+  config.action_mailer.default_url_options = { :host => 'www.resquery.com' }
+  
+  config.action_mailer.smtp_settings = {
+      :port =>           '587',
+      :address =>        'smtp.mandrillapp.com',
+      :user_name =>      ENV['MANDRILL_USERNAME'],
+      :password =>       ENV['MANDRILL_APIKEY'],
+      :domain =>         'heroku.com',
+      :authentication => :plain
+  }
+
+  config.action_mailer.delivery_method = :smtp
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

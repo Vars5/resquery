@@ -1,2 +1,13 @@
 %h1 Groups#new
 %p Find me in app/views/groups/new.html.haml
+
+= simple_form_for @group do |f|
+	= f.input :name, required: true
+	= f.input :description
+	= f.hidden_field :user_id, :value => current_user.id
+	= f.fields_for :memberships do |membership|
+		= membership.hidden_field :user_id, :value => current_user.id
+		= membership.hidden_field :group_id, :value => params[:id] 
+		= membership.hidden_field :leader, :value => true
+		= membership.hidden_field :owner, :value => true
+	=f.button :submit

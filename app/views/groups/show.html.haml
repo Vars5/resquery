@@ -1,2 +1,13 @@
 %h1 Groups#show
-%p Find me in app/views/groups/show.html.haml
+
+%h3= @group.name
+%h4='Group Description:'+ @group.description
+%br
+%h5='Add comment partials here'
+
+- if can? :manage, :all
+	.membership_invite_form
+		=simple_form_for :invite, as: :memberships, url: memberships_path(:invite) do |f|
+			=f.input :email
+			=f.hidden_field :group_id, value: params[:id]
+			=f.button :submit, "Invite Person"

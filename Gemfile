@@ -34,6 +34,7 @@ gem "bootstrap-will_paginate"
 gem "haml"
 gem 'haml-rails'
 
+gem 'simple_form'
 
 =begin
 gem 'devise-async'
