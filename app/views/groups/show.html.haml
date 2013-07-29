@@ -9,8 +9,9 @@
 .discussions
 	-@discussions.each do |discussion|
 		.discussion-unit
-			%b(class="discussion-title")= link_to discussion.title, discussion 
-			= link_to discussion.description, discussion
+			%b(class="discussion-title")
+				=link_to discussion.title, [@group, discussion]
+			=link_to discussion.description 
 			.pull-right
 				= discussion.created_at.strftime("%e %b")
 

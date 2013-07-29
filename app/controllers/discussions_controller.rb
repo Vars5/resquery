@@ -1,4 +1,10 @@
 class DiscussionsController < ApplicationController
+  
+  before_filter :authenticate_user!
+  load_and_authorize_resource :group
+  load_and_authorize_resource :through => :group
+  
+  
   def new
     @group = Group.find(params[:group_id])
     @discussion = Discussion.new
@@ -18,7 +24,7 @@ class DiscussionsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
+    #@group = Group.find(params[:id])
     @discussion = Discussion.find(params[:id])
     
 #    @memberships = @group.users   
