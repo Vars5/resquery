@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
+    @group = Group.find(params[:group_id])
     @discussions = @group.discussions
     @users = @group.users.where('sign_in_count > 0')
     @pending_users = @group.users.where('sign_in_count = 0')
