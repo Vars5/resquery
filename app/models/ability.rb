@@ -10,7 +10,6 @@ class Ability
       can :manage, Discussion, :user_id => current_user.id 
       can :read, Discussion, :group => {:memberships => { :user_id => current_user.id }}
     end
-  
-  
+    
   end
 end
