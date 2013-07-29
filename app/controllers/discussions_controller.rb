@@ -29,16 +29,15 @@ class DiscussionsController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
     @group = Group.find(params[:id]) 
-=======
+
     #@group = Group.find(params[:id])
->>>>>>> upstream/master
+
     @discussion = Discussion.find(params[:id])
     
-#    @memberships = @group.users   
+    #@memberships = @group.users   
     @comments = @discussion.comment_threads.order('created_at asc')
     @new_comment = Comment.build_from(@discussion, current_user, "")
-    
+
   end
 end
