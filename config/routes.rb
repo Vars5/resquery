@@ -13,7 +13,7 @@ Resquery::Application.routes.draw do
   end
   
   resources :memberships, only: [:create, :update, :destroy]
-  resources :discussions
+  #resources :discussions
   resources :comments, only: [:create, :destroy]
 
 end

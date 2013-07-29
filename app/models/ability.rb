@@ -6,8 +6,10 @@ class Ability
     if current_user.role == 'admin'
       can :manage, :all
     else
+      can :read, Group, :memberships => { :user_id => current_user.id }
+      can :manage, Discussion, :user_id => current_user.id 
+      can :read, Discussion, :group => {:memberships => { :user_id => current_user.id }}
     end
-  
-  
+    
   end
 end

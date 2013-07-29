@@ -1,4 +1,10 @@
 class DiscussionsController < ApplicationController
+  
+  before_filter :authenticate_user!
+  load_and_authorize_resource :group
+  load_and_authorize_resource :through => :group
+  
+  
   def new
     @group = Group.find(params[:group_id])
     @discussion = Discussion.new
@@ -9,6 +15,11 @@ class DiscussionsController < ApplicationController
     @discussion = @group.discussions.build(params[:discussion])
     if @discussion.save
         redirect_to [@group, @discussion]
+        
+        @groupmembers = @group.users.where('sign_in_count > 0')
+        @groupmembers.each do |user|
+          UserMailer.new_discussion(user, @group, @discussion, current_user).deliver
+        end
     else
         render 'new'
     end
@@ -18,7 +29,11 @@ class DiscussionsController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
     @group = Group.find(params[:id]) 
+=======
+    #@group = Group.find(params[:id])
+>>>>>>> upstream/master
     @discussion = Discussion.find(params[:id])
     
 #    @memberships = @group.users   
