@@ -18,7 +18,7 @@ class DiscussionsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
+    @group = Group.find(params[:id]) 
     @discussion = Discussion.find(params[:id])
     
 #    @memberships = @group.users   
