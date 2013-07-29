@@ -37,10 +37,14 @@ GEM
     awesome_nested_set (2.1.6)
       activerecord (>= 3.0.0)
     bcrypt-ruby (3.0.1)
+    bootstrap-rails (0.0.7)
+      railties (~> 3.1)
     bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
       will_paginate
+    bootstrap-wysihtml5-rails (0.3.1.21)
+      railties (>= 3.0)
     builder (3.0.4)
     cancan (1.6.9)
     coffee-rails (3.2.2)
@@ -160,8 +164,10 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_commentable_with_threading
+  bootstrap-rails
   bootstrap-sass (~> 2.3.2.0)
   bootstrap-will_paginate
+  bootstrap-wysihtml5-rails
   cancan
   coffee-rails
   devise

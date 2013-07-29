@@ -20,3 +20,17 @@
 			=f.input :email
 			=f.hidden_field :group_id, value: params[:id]
 			=f.button :submit, "Invite Person"
+			
+.group-members
+	Current Group Members:
+	-@users.each do |user|
+		%li
+			=user.first_name
+			=user.last_name
+	
+	%br
+	%br
+	Pending Invitations
+	-@pending_users.each do |f|
+		%li
+			=f.email

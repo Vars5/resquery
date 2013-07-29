@@ -3,11 +3,17 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
+	# html5 editor
+	
+	$(".wysihtml5").each (i, elem) ->
+  	$(elem).wysihtml5()
+
+
   # Create a comment
   $(".comment-form")
     .on "ajax:beforeSend", (evt, xhr, settings) ->
       $(this).find('textarea')
-        
+			
         .attr('disabled', 'disabled');
     .on "ajax:success", (evt, data, status, xhr) ->
       $(this).find('textarea')
@@ -24,3 +30,6 @@ jQuery ->
        $(this).hide('fast')
      .on "ajax:error", ".comment", ->
        $(this).fadeTo('fast', 1)
+
+
+			
