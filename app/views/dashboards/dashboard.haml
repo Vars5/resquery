@@ -31,3 +31,12 @@
 									%p(class="group-name")= group.name
 								%p(class="box-text")
 									= group.description
+
+	
+	
+	.row-fluid
+		Notifications
+		-@notifications.each do |notification|
+			.span12				
+				= render :partial => 'notifications', locals: {notification: notification}
+				

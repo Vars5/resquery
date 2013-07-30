@@ -15,11 +15,7 @@ class DiscussionsController < ApplicationController
     @discussion = @group.discussions.build(params[:discussion])
     if @discussion.save
         redirect_to [@group, @discussion]
-        
-        @groupmembers = @group.users.where('sign_in_count > 0')
-        @groupmembers.each do |user|
-          UserMailer.new_discussion(user, @group, @discussion, current_user).deliver
-        end
+
     else
         render 'new'
     end

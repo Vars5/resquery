@@ -7,4 +7,7 @@ class Group < ActiveRecord::Base
   accepts_nested_attributes_for :memberships
   
   has_many :discussions
+  has_many :notifications
+
+  
 end

@@ -2,6 +2,8 @@ class Comment < ActiveRecord::Base
   
   attr_accessible :commentable, :body, :user_id
   
+  after_save :create_notifications
+  
   acts_as_nested_set :scope => [:commentable_id, :commentable_type]
 
   validates :body, :presence => true
@@ -15,6 +17,9 @@ class Comment < ActiveRecord::Base
 
   # NOTE: Comments belong to a user
   belongs_to :user
+  
+  #notifications
+  has_many :notifications
 
   # Helper class method that allows you to build a comment
   # by passing a commentable object, a user_id, and comment text
@@ -48,4 +53,13 @@ class Comment < ActiveRecord::Base
   def self.find_commentable(commentable_str, commentable_id)
     commentable_str.constantize.find(commentable_id)
   end
+  
+  
+  def create_notifications
+    group = commentable.group
+    group.users.each do |user|
+      Notification.create(:user => user, :group => group, :comment => self, :active => true ) unless self.user == user
+    end
+  end
+  
 end

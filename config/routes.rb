@@ -15,5 +15,10 @@ Resquery::Application.routes.draw do
   resources :memberships, only: [:create, :update, :destroy]
   #resources :discussions
   resources :comments, only: [:create, :destroy]
-
+  
+  resources :notifications do
+    member do
+      get :deactivate
+    end
+  end
 end

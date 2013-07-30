@@ -1,0 +1,12 @@
+.render-notifications
+	=notification.user.first_name
+	|
+	posted to:
+	=notification.comment.commentable.title
+	|
+	in Group:
+	=notification.group.name
+	|
+	=notification.comment.body
+	|
+	=link_to 'hide', deactivate_notification_path(notification)
