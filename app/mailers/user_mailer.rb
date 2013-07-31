@@ -7,8 +7,7 @@ class UserMailer < ActionMailer::Base
     @current_user = current_user
     
     mail to: user.email, 
-    subject:"#{current_user.first_name} invited you to #{group.name}  - ResQuery",
-    from: current_user.email 
+    subject:"#{current_user.first_name} invited you to #{group.name}  - ResQuery"  
   end
 
   def new_discussion(user, group, discussion, current_user)
@@ -21,13 +20,12 @@ class UserMailer < ActionMailer::Base
     subject: "#{current_user.first_name} created a new discussion in #{group.name} - ResQuery"
   end
   
-  def new_comment(user, comment)
+  def new_comment(user, comment, discussion)
     @user = user
     @comment = comment
+    @discussion = discussion
     
     mail to: user.email
-    #@group = group
-    #@comment = self
   end
     
 end

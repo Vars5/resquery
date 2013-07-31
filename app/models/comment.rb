@@ -66,8 +66,9 @@ class Comment < ActiveRecord::Base
   def send_new_comment_emails
     group = commentable.group
     comment = self
+    discussion = self.commentable
     group.users.where('sign_in_count > 0').each do |user|
-      UserMailer.new_comment(user, comment).deliver
+      UserMailer.new_comment(user, comment, discussion).deliver
     end
   end
 
