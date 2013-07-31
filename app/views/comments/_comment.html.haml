@@ -1,18 +1,23 @@
 %div.comment{ :id => "comment-#{comment.id}"}
 
 	.row-fluid		
-		.span12
+		.span10
 			.comment-writing
 				%b
 					= comment.user.first_name
 					= comment.user.last_name
-										
-				\ -
-				= comment.body
-			
 					
 				- if (comment.user.id == current_user.id || current_user.role == "admin")
 					=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'
+				.pull-right
+					%small= comment.updated_at.localtime.strftime("%d %b %I:%M %P")		
+				%br						
+				= comment.body
+				%br
+				%br
+			
+					
+				
 						
 
-			%small= comment.updated_at.localtime.strftime("%d %b %I:%M %P")
+			
