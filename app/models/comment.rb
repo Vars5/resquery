@@ -2,8 +2,8 @@ class Comment < ActiveRecord::Base
   
   attr_accessible :commentable, :body, :user_id
   
-  after_save :create_notifications
-  after_save :send_new_comment_emails
+  after_create :create_notifications
+  after_create :send_new_comment_emails
   
   acts_as_nested_set :scope => [:commentable_id, :commentable_type]
 

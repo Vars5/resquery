@@ -1,7 +1,7 @@
 class Discussion < ActiveRecord::Base
   attr_accessible :description, :group, :title, :user_id, :commentable, :body, :user_id
   
-  after_save :send_notification_emails
+  after_create :send_notification_emails
   
   belongs_to :group
   
