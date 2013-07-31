@@ -20,4 +20,13 @@ class UserMailer < ActionMailer::Base
     subject: "#{current_user.first_name} created a new discussion in #{group.name} - ResQuery"
   end
   
+  def new_comment(user, comment)
+    @user = user
+    @comment = comment
+    
+    mail to: user.email
+    #@group = group
+    #@comment = self
+  end
+    
 end

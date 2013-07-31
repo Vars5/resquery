@@ -3,9 +3,14 @@
 	%p(class="small-text")= @group.description
 	%hr 
 
+.new-discussion
+	=link_to "New Discussion", new_group_discussion_path(@group)
+	%br
+	%br
+
 .updates
 	%h4 Latest Discussions
-
+	
 .discussions
 	-@discussions.each do |discussion|
 		.discussion-unit

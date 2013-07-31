@@ -14,10 +14,9 @@ class DiscussionsController < ApplicationController
     @group = Group.find(params[:group_id])
     @discussion = @group.discussions.build(params[:discussion])
     if @discussion.save
-        redirect_to [@group, @discussion]
-
+      redirect_to [@group, @discussion]
     else
-        render 'new'
+      render 'new'
     end
   end
   
