@@ -1,5 +1,5 @@
 class Group < ActiveRecord::Base
-  attr_accessible :description, :name, :user_id, :memberships_attributes
+  attr_accessible :description, :name, :user_id, :memberships_attributes, :user, :group
   
   #Associations
   has_many :memberships

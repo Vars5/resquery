@@ -67,8 +67,9 @@ class Comment < ActiveRecord::Base
     group = commentable.group
     comment = self
     discussion = self.commentable
+    
     group.users.where('sign_in_count > 0').each do |user|
-      UserMailer.new_comment(user, comment, discussion).deliver
+      UserMailer.new_comment(user, comment, discussion).deliver unless user.id == comment.user_id
     end
   end
 

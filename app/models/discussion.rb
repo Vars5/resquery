@@ -12,8 +12,8 @@ class Discussion < ActiveRecord::Base
     #group = self.group
     current_user = User.find_by_id(self.user_id)
     
-    group.users.where('sign_in_count > 0').each do |user|
-      UserMailer.new_discussion(user, group, self, current_user).deliver
+    group.users.where('sign_in_count > 0').each do |user| 
+      UserMailer.new_discussion(user, group, self, current_user).deliver unless user == current_user
     end
   
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730094907) do
+ActiveRecord::Schema.define(:version => 20130802010807) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130730094907) do
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "link"
   end
 
   create_table "groups", :force => true do |t|
