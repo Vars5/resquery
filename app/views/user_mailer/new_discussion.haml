@@ -1,0 +1,15 @@
+Hi 
+=@user.first_name
+%br
+=@current_user.first_name
+created a new discussion in 
+= @group.name
+on ResQuery
+%br
+%b Discussion
+= @discussion.title
+%br
+
+%br
+To add to this discussion 
+=link_to("Click Here", group_discussion_url(@group, @discussion))
