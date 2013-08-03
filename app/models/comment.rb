@@ -2,7 +2,8 @@ class Comment < ActiveRecord::Base
   
   attr_accessible :commentable, :body, :user_id
   
-  after_save :create_notifications
+  after_create :create_notifications
+  after_create :send_new_comment_emails
   
   acts_as_nested_set :scope => [:commentable_id, :commentable_type]
 
@@ -61,5 +62,15 @@ class Comment < ActiveRecord::Base
       Notification.create(:user => user, :group => group, :comment => self, :active => true ) unless self.user == user
     end
   end
-  
+
+  def send_new_comment_emails
+    group = commentable.group
+    comment = self
+    discussion = self.commentable
+    
+    group.users.where('sign_in_count > 0').each do |user|
+      UserMailer.new_comment(user, comment, discussion).deliver unless user.id == comment.user_id
+    end
+  end
+
 end

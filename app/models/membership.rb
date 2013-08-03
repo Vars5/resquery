@@ -1,5 +1,5 @@
 class Membership < ActiveRecord::Base
-  attr_accessible :leader, :owner, :group, :user
+  attr_accessible :leader, :owner, :group_id, :user_id, :group, :user
   
   #association
   belongs_to :group

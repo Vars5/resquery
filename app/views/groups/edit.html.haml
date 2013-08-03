@@ -1,2 +1,4 @@
 %h1 Groups#edit
-%p Find me in app/views/groups/edit.html.haml
+
+=render partial: 'groups/form'
+=link_to "Delete Group", @group, method: :delete, data: { confirm: "Are you sure you want to delete #{@group.name}"}

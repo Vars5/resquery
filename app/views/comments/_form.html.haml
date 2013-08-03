@@ -1,9 +1,10 @@
-.comment-form
-	.row-fluid			
-		.span11
-			.wysihtml5
-				= simple_form_for comment, :remote => true do |f|
-					= f.input :body, as: :text, :input_html => { :rows => "2" }, :label => false, :class => "wysihtml5"
-					= f.input :commentable_id, :as => :hidden, :value => comment.commentable_id
-					= f.input :commentable_type, :as => :hidden, :value => comment.commentable_type
-					= f.button :submit, :class => "comment-button", :disable_with => "Submitting…"
+.row-fluid			
+	.span11
+		.pad-top
+			.comment-form
+				.wysihtml5
+					= simple_form_for comment, :remote => true do |f|
+						= f.input :body, as: :text, :input_html => { :rows => "2" }, :label => false, :class => "wysihtml5"
+						= f.input :commentable_id, :as => :hidden, :value => comment.commentable_id
+						= f.input :commentable_type, :as => :hidden, :value => comment.commentable_type
+						= f.button :submit, :class => "comment-button", :disable_with => "Submitting…"

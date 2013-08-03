@@ -6,4 +6,4 @@ Hi <%= @user.first_name %>,
 </br>
 <b>Description:</b> <%= @discussion.description %>
 </br>
-To add to this discussion <%= link_to("Click Here", url_for([@group, @discussion])) %>
+To add to this discussion <%= link_to("Click Here", [@group, @discussion]) %>

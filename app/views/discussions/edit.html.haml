@@ -1,2 +1,3 @@
-%h1 Discussions#edit
-%p Find me in app/views/discussions/edit.html.haml
+=render partial: 'form'
+
+=link_to "Delete this Discussion", [@group,@discussion], method: :delete, data: { confirm: 'You Sure?'}
