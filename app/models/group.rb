@@ -8,6 +8,7 @@ class Group < ActiveRecord::Base
   
   has_many :discussions
   has_many :notifications
+  has_many :links
 
   
 end

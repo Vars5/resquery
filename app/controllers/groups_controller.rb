@@ -30,6 +30,7 @@ class GroupsController < ApplicationController
     @discussions = @group.discussions
     @users = @group.users.where('sign_in_count > 0')
     @pending_users = @group.users.where('sign_in_count = 0')
+    @links = @group.links
   end
 
   def index
