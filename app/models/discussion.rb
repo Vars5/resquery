@@ -7,6 +7,20 @@ class Discussion < ActiveRecord::Base
   
   #comments
   acts_as_commentable
+
+
+  def author
+    User.find_by_id(self.user_id)
+  end
+  
+  def authors_first_name
+    self.author.first_name
+  end
+  
+  def authors_last_name
+    self.author.last_name
+  end
+
   
   def send_notification_emails
     #group = self.group

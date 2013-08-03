@@ -1,7 +1,21 @@
-.discussion
-	= simple_form_for [@group, @discussion] do |f|
-		= f.input :title
-		= f.input :link
-		= f.input :description
-		= f.input :user_id, as: :hidden, :input_html => { :value => current_user.id }
-		= f.button :submit
+
+.form-horizontal
+	= form_for [@group, @discussion] do |f|
+		.control-group
+			= f.label :title, :class=>"control-label"
+			.controls
+				= f.text_field :title, :placeholder => "The title of the discussion"
+		.control-group
+			= f.label :link , :class=>"control-label"
+			.controls
+				= f.text_field :link, :placeholder => "The URL you want to link to "
+		.control-group
+			= f.label :description , :class=>"control-label"
+			.controls
+				= f.text_area :description, :placeholder => "Description"
+				= f.hidden_field :user_id, :value => current_user.id
+				%br
+				%br
+				= f.submit :class => "sign-up-button" 
+
+
