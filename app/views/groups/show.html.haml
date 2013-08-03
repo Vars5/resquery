@@ -49,3 +49,16 @@
 			-@pending_users.each do |f|
 				%li
 					=f.email
+					
+					
+		.link-form
+			Add Link
+			=form_for :link, as: :links, url: links_path(:link) do |f|
+				=f.text_field :title, :placeholder => "Title"
+				=f.text_field :link, :placeholder => "http://"
+				=f.hidden_field :user_id, value: current_user.id
+				=f.hidden_field :group_id, value: params[:id]
+				=f.submit "Add Link"
+		.link-feed
+			-@links.each do |link|
+				=link_to link.title, link.link
