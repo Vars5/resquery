@@ -31,6 +31,9 @@ $standard-padding:30px;
 $orange: #E8A00C;
 $dark-blue:#07376E;
 
+$mustard: #E8A00C;
+$light-mustard: #F7DCA7;
+
 /* ========= SECTION 2: UNIVERSALS =========*/
 
 
@@ -65,6 +68,11 @@ input {
 	border:1px solid $aqua !important;
 }
 
+textarea {
+	width:95%;
+	border:1px solid $aqua !important;
+}
+
 .center-alignment {
 	text-align:center;
 }
@@ -86,6 +94,37 @@ input {
 
 .pad-bottom{
 	padding-bottom:$standard-padding*1.5;
+}
+
+.comment-form{
+	textarea{
+		height:100px ;
+		width:100%;
+	}
+}
+
+.comment-item{
+
+	font-size:13px;
+}
+
+
+.yellow-button{
+	min-width:99%;
+	padding: 3px 15px;
+    background: $light-mustard;
+	color:$aqua;
+	border-radius: 4px;
+	border: solid 1px $mustard;
+	font-size:10px;
+}
+
+.yellow-button:hover, .yellow-button:focus {
+    background: $mustard;
+
+    border: solid 1px $mustard;
+    text-decoration: none;
+
 }
 
 
@@ -238,6 +277,11 @@ input {
 		color:$aqua;
 		font-size:19px;
 	}
+	h3{
+		font-weight:400;
+		font-size:30px;
+	}
+
 }
 
 .box{
@@ -268,6 +312,10 @@ input {
 	margin-bottom:13px;
 }
 
+.main-title-text{
+	font-weight:700;
+}
+
 /* ========= SECTION 7: GROUPS SHOW PAGE =========*/
 
 .right-group-header{
@@ -283,6 +331,10 @@ input {
 	}
 }
 
+.light-grey{
+	color: $light-grey;
+}
+
 
 /* ========= SECTION 8: GROUPS PAGE =========*/
 
@@ -291,6 +343,7 @@ input {
 /* ========= SECTION 8: DISCUSSIONS PAGE =========*/
 
 .discussions{
+		font-family: 'Libre Baskerville', serif;
 	font-size:12px;
 	a{
 		color:$text-color;
@@ -327,3 +380,11 @@ input {
 	border-radius: 4px;
 	border: solid 1px $aqua-midpoint;	
 }
+
+.discussion_heading{
+	font-family: 'Libre Baskerville', serif;
+	font-size:30px;
+	line-height:30px;
+	padding:20px 0px;
+}
+

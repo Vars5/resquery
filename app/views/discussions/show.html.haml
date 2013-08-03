@@ -1,18 +1,26 @@
 .dashboard
-	.group
-		.show_discussion
-			%h4= @discussion.title
-			%p= @discussion.link
-			%p= @discussion.description
+	
+	.row-fluid
+		.span8
+			.group
+				.show_discussion
+					.discussion_heading
+						= @discussion.title
+					By 
+					= @discussion.authors_first_name 
+					= @discussion.authors_last_name
+			
+					%p= @discussion.link
+					%p= simple_format(@discussion.description)
 		
-		%hr
-		.comments
-			Discuss this message:
-			%br
-			%br
-			= render partial: 'comments/comment', collection: @comments, as: :comment
-			%br
-			%br
-			= render partial: 'comments/form', locals: { comment: @new_comment }
-
-
+				%hr
+				.comments
+					Discuss this message:
+					%br
+					%br
+					= render partial: 'comments/comment', collection: @comments, as: :comment
+					%br
+					%br
+					= render partial: 'comments/form', locals: { comment: @new_comment }
+		.span4
+			Teset
