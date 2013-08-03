@@ -238,6 +238,11 @@ input {
 		color:$aqua;
 		font-size:19px;
 	}
+	h3{
+		font-weight:400;
+		font-size:30px;
+	}
+
 }
 
 .box{
@@ -266,6 +271,10 @@ input {
 
 .group-name{
 	margin-bottom:13px;
+}
+
+.main-title-text{
+	font-weight:700;
 }
 
 /* ========= SECTION 7: GROUPS SHOW PAGE =========*/
