@@ -1,6 +1,6 @@
 .dashboard
 	%h3
-		%span(class="light-grey") resQuery/ 
+		%span(class="light-grey") rQ/ 
 		%span(class="main-title-text")= @group.name 
 	%p(class="small-text")= @group.description
 	%hr 
@@ -35,30 +35,38 @@
 					=f.button :submit, "Invite Person"
 
 	.span4
-		.group-members
-			Group Members:
-			-@users.each do |user|
-				%ul(class="unstyled")
-					%li
-						=user.first_name
-						=user.last_name
+		-if false
+			.group-members
+				Group Members:
+				-@users.each do |user|
+					%ul(class="unstyled")
+						%li
+							=user.first_name
+							=user.last_name
 	
 
-			%br
-			Pending Invitations
-			-@pending_users.each do |f|
-				%li
-					=f.email
-					
-					
-		.link-form
-			Add Link
-			=form_for :link, as: :links, url: links_path(:link) do |f|
-				=f.text_field :title, :placeholder => "Title"
-				=f.text_field :link, :placeholder => "http://"
-				=f.hidden_field :user_id, value: current_user.id
-				=f.hidden_field :group_id, value: params[:id]
-				=f.submit "Add Link"
+				%br
+				Pending Invitations
+				-@pending_users.each do |f|
+					%li
+						=f.email
+		
+		.link-feed-title
+			%b Quality Links
+				
 		.link-feed
-			-@links.each do |link|
-				=link_to link.title, link.link
+			%ul(class="unstyled")
+				-@links.each do |link|
+					%li
+						=link_to link.title, link.link
+		.link-feed-title
+			%b Add a link
+		
+		.link-feed	
+			.link-form
+				=form_for :link, as: :links, url: links_path(:link) do |f|
+					=f.text_field :title, :placeholder => "title"
+					=f.text_field :link, :placeholder => "url"
+					=f.hidden_field :user_id, value: current_user.id
+					=f.hidden_field :group_id, value: params[:id]
+					=f.submit "Add Link", :class => "sign-up-button"						

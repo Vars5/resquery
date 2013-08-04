@@ -104,7 +104,6 @@ textarea {
 }
 
 .comment-item{
-
 	font-size:13px;
 }
 
@@ -343,7 +342,7 @@ textarea {
 /* ========= SECTION 8: DISCUSSIONS PAGE =========*/
 
 .discussions{
-		font-family: 'Libre Baskerville', serif;
+
 	font-size:12px;
 	a{
 		color:$text-color;
@@ -353,6 +352,7 @@ textarea {
 
 .discussion-title{
 	a{
+		font-family: 'Libre Baskerville', serif;
 		font-weight:700;
 		color:$dark-blue;
 		text-decoration:underline;
@@ -384,7 +384,31 @@ textarea {
 .discussion_heading{
 	font-family: 'Libre Baskerville', serif;
 	font-size:30px;
-	line-height:30px;
+	line-height:35px;
 	padding:20px 0px;
 }
 
+
+
+/** other **/
+
+.link-feed-title{
+	background-color:$light-aqua;
+	padding:10px;
+	border-top:$aqua 5px solid;
+	border-bottom:$aqua 1px dotted;
+}
+
+.link-feed{
+	background-color:$fade-aqua;
+	padding:10px;
+	a:hover{
+		text-decoration:none;
+	}
+
+}
+
+
+.strikethrough{
+	text-decoration:line-through;
+}
