@@ -5,7 +5,7 @@ A new comment was added to
 =@discussion.title
 %br
 %br
-= @comment.body
+= simple_format(@comment.body)
 %br
 %br
 =link_to "Click here to add to the discussion", group_discussion_url(@group, @discussion)

@@ -301,6 +301,11 @@ textarea {
 	color:$light-grey;
 }
 
+.tiny-text{
+	font-size:10px;
+	color:$light-grey;
+}
+
 .box-text{
 	line-height:16px;
 	font-size:12px;
@@ -397,13 +402,19 @@ textarea {
 	padding:10px;
 	border-top:$aqua 5px solid;
 	border-bottom:$aqua 1px dotted;
+
 }
 
 .link-feed{
+
 	background-color:$fade-aqua;
 	padding:10px;
 	a:hover{
 		text-decoration:none;
+	}
+	.tiny-text{
+		line-height:10px;
+		padding-bottom:15px;
 	}
 
 }
