@@ -403,12 +403,16 @@ textarea {
 	border-top:$aqua 5px solid;
 	border-bottom:$aqua 1px dotted;
 
+
 }
 
 .link-feed{
 
 	background-color:$fade-aqua;
 	padding:10px;
+	a{
+		line-height:1px;
+	}
 	a:hover{
 		text-decoration:none;
 	}

@@ -25,7 +25,7 @@
 					\ -
 					=link_to truncate((strip_tags(discussion.description)), :length => 140)
 					.pull-right
-						= discussion.created_at.strftime("%e %b")
+						=# discussion.created_at.strftime("%e %b")
 
 		- if can? :manage, :all
 			.membership_invite_form
