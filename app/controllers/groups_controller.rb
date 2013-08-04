@@ -45,4 +45,7 @@ class GroupsController < ApplicationController
       redirect_to @group
     end
   end
+  
+  def members
+  end
 end
