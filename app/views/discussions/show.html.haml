@@ -4,11 +4,12 @@
 		.span8
 			.group
 				.show_discussion
-					.discussion_heading
-						= @discussion.title
-					By 
-					= @discussion.authors_first_name 
-					= @discussion.authors_last_name
+					.discussion-top-area
+						.discussion_heading
+							= @discussion.title
+						By 
+						= @discussion.authors_first_name 
+						= @discussion.authors_last_name
 			
 					%p= @discussion.link
 					%p= simple_format(@discussion.description)
@@ -23,4 +24,3 @@
 					%br
 					= render partial: 'comments/form', locals: { comment: @new_comment }
 		.span4
-			Teset
