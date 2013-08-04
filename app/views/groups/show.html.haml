@@ -58,7 +58,7 @@
 			%ul(class="unstyled")
 				-@links.each do |link|
 					%li
-						=link_to link.title, link.link
+						=link_to link.title, link.link, :target => "_blank"
 						.tiny-text
 							submitted by
 							=full_name(link.user_id)
