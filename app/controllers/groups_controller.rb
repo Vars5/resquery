@@ -27,10 +27,10 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @discussions = @group.discussions
+    @discussions = @group.discussions.reverse
     @users = @group.users.where('sign_in_count > 0')
     @pending_users = @group.users.where('sign_in_count = 0')
-    @links = @group.links
+    @links = @group.links.reverse
   end
 
   def index
