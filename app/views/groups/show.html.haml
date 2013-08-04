@@ -61,4 +61,8 @@
 				=f.submit "Add Link"
 		.link-feed
 			-@links.each do |link|
-				=link_to link.title, link.link
+				%li=link_to link.title, link.link 
+				added by
+				=full_name(link.user_id)
+				 
+				 
