@@ -1,11 +1,20 @@
 .dashboard
-	%h3
-		%span(class="light-grey") rQ/ 
-		%span(class="main-title-text")= @group.name 
-	%p(class="small-text")= @group.description
+	.row-fluid
+		.span8
+			%h3
+				%span(class="light-grey") rQ/ 
+				%span(class="main-title-text")= @group.name 
+			%p(class="small-text")= @group.description
+
+		.span4
+			.group-members
+				.pull-right
+					=@users.count
+					members
+					-#link_to "#{@users.count} Group Members", users_group_path
+
+
 	%hr 
-
-
 
 .row-fluid
 	.span8
@@ -35,12 +44,6 @@
 					=f.button :submit, "Invite Person"
 
 	.span4
-
-		.group-members
-			%h3
-				=link_to "#{@users.count} Group Members", users_group_path
-			
-			%br	 
 		
 		.link-feed-title
 			%b Quality Links

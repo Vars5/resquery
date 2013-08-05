@@ -12,7 +12,7 @@
 						= @discussion.authors_last_name
 			
 					%p=link_to @discussion.link, @discussion.link
-					%p= simple_format(@discussion.description)
+					%p= simple_format(@discussion.description,{}, :sanitize => false)
 		
 				%hr
 				.comments
