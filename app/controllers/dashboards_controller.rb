@@ -12,6 +12,7 @@ class DashboardsController < ApplicationController
   
   def admin
     @users = User.all
+    authorize! :admin, @users
   end
   
 end

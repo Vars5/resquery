@@ -38,10 +38,10 @@
 
 		- if can? :manage, :all
 			.membership_invite_form
-				=simple_form_for :invite, as: :memberships, url: memberships_path(:invite) do |f|
-					=f.input :email
+				=form_for :invite, as: :memberships, url: memberships_path(:invite) do |f|
+					=f.email_field :email
 					=f.hidden_field :group_id, value: params[:id]
-					=f.button :submit, "Invite Person"
+					=f.submit "Invite Person"
 
 	.span4
 		

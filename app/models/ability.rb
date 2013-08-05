@@ -7,6 +7,7 @@ class Ability
       can :manage, :all
     else
       can :read, Group, :memberships => { :user_id => current_user.id }
+      can :users, Group, :memberships => { :user_id => current_user.id }
       can :manage, Discussion, :user_id => current_user.id 
       can :read, Discussion, :group => {:memberships => { :user_id => current_user.id }}
     end

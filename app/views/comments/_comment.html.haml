@@ -7,7 +7,7 @@
 					= comment.user.first_name
 					= comment.user.last_name
 				%span(class="comment-item")= simple_format(comment.body)	
-				- if (comment.user.id == current_user.id || current_user.role == "admin" || Time.Now - comment.created_at > 15min )
+				- if (comment.user.id == current_user.id || current_user.role == "admin" )
 					=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'
 				.pull-right
 					%small= comment.updated_at.localtime.strftime("%d %b %I:%M %P")		

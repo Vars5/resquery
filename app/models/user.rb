@@ -10,11 +10,11 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   #Associations
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships
   
   #Notification
-  has_many :notifications
+  has_many :notifications, dependent: :destroy
   
   
 end
