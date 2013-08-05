@@ -1,6 +1,6 @@
 .dashboard
 	%h3
-		%span(class="light-grey") resQuery/ 
+		%span(class="light-grey") rQ/ 
 		%span(class="main-title-text")= @group.name 
 	%p(class="small-text")= @group.description
 	%hr 
@@ -23,9 +23,9 @@
 					%b(class="discussion-title")
 						=link_to discussion.title, [@group, discussion]
 					\ -
-					=link_to truncate(discussion.description, :length => 140)
+					=link_to truncate((strip_tags(discussion.description)), :length => 140)
 					.pull-right
-						= discussion.created_at.strftime("%e %b")
+						=# discussion.created_at.strftime("%e %b")
 
 		- if can? :manage, :all
 			.membership_invite_form
@@ -35,34 +35,42 @@
 					=f.button :submit, "Invite Person"
 
 	.span4
-		.group-members
-			Group Members:
-			-@users.each do |user|
-				%ul(class="unstyled")
-					%li
-						=user.first_name
-						=user.last_name
+		-if false
+			.group-members
+				Group Members:
+				-@users.each do |user|
+					%ul(class="unstyled")
+						%li
+							=user.first_name
+							=user.last_name
 	
 
-			%br
-			Pending Invitations
-			-@pending_users.each do |f|
-				%li
-					=f.email
-					
-					
-		.link-form
-			Add Link
-			=form_for :link, as: :links, url: links_path(:link) do |f|
-				=f.text_field :title, :placeholder => "Title"
-				=f.text_field :link, :placeholder => "http://"
-				=f.hidden_field :user_id, value: current_user.id
-				=f.hidden_field :group_id, value: params[:id]
-				=f.submit "Add Link"
+				%br
+				Pending Invitations
+				-@pending_users.each do |f|
+					%li
+						=f.email
+		
+		.link-feed-title
+			%b Quality Links
+				
 		.link-feed
-			-@links.each do |link|
-				%li=link_to link.title, link.link 
-				added by
-				=full_name(link.user_id)
-				 
-				 
+			%ul(class="unstyled")
+				-@links.each do |link|
+					%li
+						=link_to link.title, link.link, :target => "_blank"
+						.tiny-text
+							submitted by
+							=full_name(link.user_id)
+					
+		.link-feed-title
+			%b Add a link
+		
+		.link-feed	
+			.link-form
+				=form_for :link, as: :links, url: links_path(:link) do |f|
+					=f.text_field :title, :placeholder => "title"
+					=f.text_field :link, :placeholder => "url"
+					=f.hidden_field :user_id, value: current_user.id
+					=f.hidden_field :group_id, value: params[:id]
+					=f.submit "Add Link", :class => "sign-up-button"						

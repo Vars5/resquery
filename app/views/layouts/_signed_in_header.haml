@@ -1,8 +1,21 @@
 .signed-in-header
 	.container-fluid
 		.row-fluid
-			.span12		
-				.pull-right
+			.span12
+				.visible-phone
+					&nbsp &nbsp	
+					= link_to 'resQuery' , root_path
+					&nbsp &nbsp					
+					= link_to 'My Groups', root_path
+					- if current_user.role == "admin"
+						&nbsp &nbsp		 
+						=link_to 'Admin', 'admin_path'
+					&nbsp &nbsp
+					= link_to 'Account Settings' , edit_user_registration_path 
+					&nbsp &nbsp
+					= link_to 'Log Out', destroy_user_session_path, :method =>"DELETE"
+					
+				.pull-right.hidden-phone
 					- if current_user.role == "admin" 
 						=link_to 'Admin', 'admin_path'
 					&nbsp &nbsp

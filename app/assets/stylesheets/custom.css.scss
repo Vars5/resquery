@@ -98,13 +98,12 @@ textarea {
 
 .comment-form{
 	textarea{
-		height:100px ;
+		min-height:100px ;
 		width:100%;
 	}
 }
 
 .comment-item{
-
 	font-size:13px;
 }
 
@@ -302,6 +301,11 @@ textarea {
 	color:$light-grey;
 }
 
+.tiny-text{
+	font-size:10px;
+	color:$light-grey;
+}
+
 .box-text{
 	line-height:16px;
 	font-size:12px;
@@ -343,7 +347,7 @@ textarea {
 /* ========= SECTION 8: DISCUSSIONS PAGE =========*/
 
 .discussions{
-		font-family: 'Libre Baskerville', serif;
+
 	font-size:12px;
 	a{
 		color:$text-color;
@@ -351,8 +355,14 @@ textarea {
 	}
 }
 
+.discussion-top-area{
+	padding-bottom:5px;
+	border-bottom:1px dotted $aqua;
+}
+
 .discussion-title{
 	a{
+		font-family: 'Libre Baskerville', serif;
 		font-weight:700;
 		color:$dark-blue;
 		text-decoration:underline;
@@ -384,7 +394,41 @@ textarea {
 .discussion_heading{
 	font-family: 'Libre Baskerville', serif;
 	font-size:30px;
-	line-height:30px;
+	line-height:35px;
 	padding:20px 0px;
 }
 
+
+
+/** other **/
+
+.link-feed-title{
+	background-color:$light-aqua;
+	padding:10px;
+	border-top:$aqua 5px solid;
+	border-bottom:$aqua 1px dotted;
+
+
+}
+
+.link-feed{
+
+	background-color:$fade-aqua;
+	padding:10px;
+	a{
+		line-height:1px;
+	}
+	a:hover{
+		text-decoration:none;
+	}
+	.tiny-text{
+		line-height:10px;
+		padding-bottom:15px;
+	}
+
+}
+
+
+.strikethrough{
+	text-decoration:line-through;
+}
