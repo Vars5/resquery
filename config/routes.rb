@@ -7,7 +7,7 @@ Resquery::Application.routes.draw do
   match '/test', :to => 'dashboards#test_group'
   match '/admin', to: 'dashboards#admin'
   
-  get '/groups/:id/users', to: 'groups#users', as: 'users_group'
+  get '/groups/:id/members', to: 'groups#users', as: 'users_group'
   
   devise_for :users
 
@@ -16,7 +16,7 @@ Resquery::Application.routes.draw do
   end
   
   resources :memberships, only: [:create, :update, :destroy]
-  #resources :discussions
+
   resources :comments, only: [:create, :destroy]
   resources :links, only: [:create, :destroy]
   
