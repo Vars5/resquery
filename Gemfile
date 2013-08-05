@@ -44,6 +44,8 @@ gem 'newrelic_rpm'
 gem 'acts_as_commentable_with_threading'
 
 
+gem 'intercom-rails', '~> 0.2.21'
+
 =begin
 gem 'devise-async'
 foreman
