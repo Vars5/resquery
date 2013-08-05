@@ -4,6 +4,7 @@ class UserMailer < ActionMailer::Base
   def new_group(user, current_user, group)
     @user = user
     @current_user = current_user
+    @group = group
     
     mail to: user.email, 
     from: "#{current_user.first_name} #{current_user.last_name} (ResQuery) <notifications@resquery.com>",
