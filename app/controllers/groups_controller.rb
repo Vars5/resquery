@@ -45,4 +45,10 @@ class GroupsController < ApplicationController
       redirect_to @group
     end
   end
+  
+  def users
+    @group = Group.find(params[:id])
+    @users = @group.users.where('sign_in_count > 0')
+    @pending_users = @group.users.where('sign_in_count = 0')
+  end
 end

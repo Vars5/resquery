@@ -10,7 +10,7 @@
 					= @discussion.authors_first_name 
 					= @discussion.authors_last_name
 			
-					%p= @discussion.link
+					%p=link_to @discussion.link, @discussion.link
 					%p= simple_format(@discussion.description)
 		
 				%hr

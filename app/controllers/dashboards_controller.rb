@@ -10,4 +10,8 @@ class DashboardsController < ApplicationController
   def test_group
   end
   
+  def admin
+    @users = User.all
+  end
+  
 end

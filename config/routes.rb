@@ -5,6 +5,9 @@ Resquery::Application.routes.draw do
 
   match '/about', :to => 'staticpages#about'
   match '/test', :to => 'dashboards#test_group'
+  match '/admin', to: 'dashboards#admin'
+  
+  get '/groups/:id/users', to: 'groups#users', as: 'users_group'
   
   devise_for :users
 

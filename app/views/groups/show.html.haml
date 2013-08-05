@@ -36,19 +36,13 @@
 
 	.span4
 		.group-members
-			Group Members:
-			-@users.each do |user|
-				%ul(class="unstyled")
-					%li
-						=user.first_name
-						=user.last_name
-	
-
+			%h3
+				=link_to "#{@users.count} Group Members", users_group_path
+			
 			%br
-			Pending Invitations
-			-@pending_users.each do |f|
-				%li
-					=f.email
+			%br	 
+				
+
 					
 					
 		.link-form
