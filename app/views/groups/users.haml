@@ -3,5 +3,12 @@
 -@users.each do |member|
 	
 	%h5=full_name(member.id)
+
+%br
+%br
+%br	
+%h3="Pending"
+
+-@pending_users.each do |member|
 	
-	
+	%h5=member.email
