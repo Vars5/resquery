@@ -8,7 +8,7 @@ class Ability
     else
       #group permissions
       can [:read, :users, :links], Group, :memberships => { :user_id => current_user.id }
-      can [:manage], Group, :memberships => { :user_id => current_user.id, :admin => "true" }
+      can [:manage], Group, :memberships => { :user_id => current_user.id, :leader => "true" }
       
       #discussion permissions
       can :manage, Discussion, :user_id => current_user.id 
