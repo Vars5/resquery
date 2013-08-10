@@ -8,6 +8,7 @@ Resquery::Application.routes.draw do
   match '/admin', to: 'dashboards#admin'
   
   get '/groups/:id/members', to: 'groups#users', as: 'users_group'
+  get 'groups/:id/links', to: 'groups#links', as: 'group_links'
   
   devise_for :users
 

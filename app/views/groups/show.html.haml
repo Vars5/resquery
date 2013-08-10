@@ -54,7 +54,7 @@
 						.tiny-text
 							submitted by
 							=full_name(link.user_id)
-					
+				=link_to "See all", group_links_path	
 		.link-feed-title
 			%b Add a link
 		
@@ -66,3 +66,4 @@
 					=f.hidden_field :user_id, value: current_user.id
 					=f.hidden_field :group_id, value: params[:id]
 					=f.submit "Add Link", :class => "sign-up-button"
+				
