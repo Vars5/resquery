@@ -1,9 +1,9 @@
 
 .pad-top
 	.comment-form
-		.wysihtml5
+		.wysihtml5.reply-area
 			= simple_form_for comment, :remote => true do |f|
-				= f.input :body, as: :text, :input_html => { :class => "wysihtml5", :placeholder => "Quick Reply" }, :label => false
+				= f.input :body, as: :text, :input_html => { :class => "wysihtml5 commenting-area", :placeholder => "Quick Reply" }, :label => false
 				= f.input :commentable_id, :as => :hidden, :value => comment.commentable_id
 				= f.input :commentable_type, :as => :hidden, :value => comment.commentable_type
 				= f.button :submit, :class => "comment-button", :disable_with => "Submitting…"

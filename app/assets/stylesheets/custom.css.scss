@@ -34,6 +34,8 @@ $dark-blue:#07376E;
 $mustard: #E8A00C;
 $light-mustard: #F7DCA7;
 
+@in-case{ font-family: 'Libre Baskerville', serif;}
+
 /* ========= SECTION 2: UNIVERSALS =========*/
 
 
@@ -98,7 +100,7 @@ textarea {
 
 .comment-form{
 	textarea{
-		min-height:100px ;
+		min-height:40px;
 		width:100%;
 	}
 }
@@ -362,7 +364,7 @@ textarea {
 
 .discussion-title{
 	a{
-		font-family: 'Libre Baskerville', serif;
+		
 		font-weight:700;
 		color:$dark-blue;
 		text-decoration:underline;
@@ -392,8 +394,8 @@ textarea {
 }
 
 .discussion_heading{
-	font-family: 'Libre Baskerville', serif;
-	font-size:30px;
+	font-weight:700;
+	font-size:35px;
 	line-height:35px;
 	padding:20px 0px;
 }
@@ -431,4 +433,53 @@ textarea {
 
 .strikethrough{
 	text-decoration:line-through;
+}
+
+
+
+
+
+.commenting-area {
+
+}
+
+textarea.wysihtml5{
+	outline: none;
+	padding:5px;
+	border:none !important;
+	box-shadow:none !important;
+	border:0px !important;
+	background-color:#FFFFE3;
+	padding:40px 15px 3px 20px !important;
+}
+
+textarea.wysihtml5:focus{
+	color:$text-color;
+}
+
+.dropdown {
+	display:none !important;
+}
+
+.nothing {
+	display:none !important;
+}
+
+
+.reply-area {
+
+}
+
+
+.show_discussion{
+	p{
+	color:#666666;
+	font-size:18px;
+	line-height:32px;
+	}
+}
+
+
+.comments{
+
 }
