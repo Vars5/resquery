@@ -9,13 +9,16 @@
 			= f.label :link , :class=>"control-label"
 			.controls
 				= f.text_field :link, :placeholder => "The URL you want to link to "
+		.control-group	
+			= f.label :question , :class=>"control-label"
+			.controls
+				= f.text_field :question, :placeholder => "What do you do want to discuss? Questions you may have?"
 		.control-group
 			= f.label :description , :class=>"control-label"
+				
 			.controls
 				= f.text_area :description, :placeholder => "Description", :class=>"wysihtml5"
 				= f.hidden_field :user_id, :value => current_user.id
 				%br
 				%br
-				= f.submit :class => "sign-up-button" 
-
-
+				= f.submit :class => "sign-up-button"
