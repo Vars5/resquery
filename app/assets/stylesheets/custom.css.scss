@@ -100,7 +100,7 @@ textarea {
 
 .comment-form{
 	textarea{
-		min-height:70px;
+		min-height:40px;
 		width:100%;
 	}
 }
@@ -440,9 +440,7 @@ textarea {
 
 
 .commenting-area {
-	border:0px !important;
-	background-color:#FFFFE3;
-	
+
 }
 
 textarea.wysihtml5{
@@ -450,7 +448,9 @@ textarea.wysihtml5{
 	padding:5px;
 	border:none !important;
 	box-shadow:none !important;
-
+	border:0px !important;
+	background-color:#FFFFE3;
+	padding:40px 15px 3px 20px !important;
 }
 
 textarea.wysihtml5:focus{

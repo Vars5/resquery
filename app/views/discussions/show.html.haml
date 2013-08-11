@@ -12,8 +12,11 @@
 						= @discussion.authors_last_name
 						in
 						= discussion_group(@discussion.group_id)
+						-if @discussion.link != nil
+							%br
+							=link_to @discussion.link, @discussion.link
 			
-					%p=link_to @discussion.link, @discussion.link
+					
 					%p= simple_format(@discussion.description,{}, :sanitize => false)
 		
 				%hr
@@ -21,6 +24,6 @@
 
 			.comments
 				%h5 
-					Do you think bezos made a good decision
+					=@discussion.question
 				= render partial: 'comments/form', locals: { comment: @new_comment }
 				= render partial: 'comments/comment', collection: @comments, as: :comment		
