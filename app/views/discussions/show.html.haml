@@ -14,7 +14,7 @@
 						= discussion_group(@discussion.group_id)
 						-if @discussion.link != nil
 							%br
-							=link_to @discussion.link, @discussion.link
+							=link_to truncate(@discussion.link), @discussion.link
 			
 					
 					%p= simple_format(@discussion.description,{}, :sanitize => false)
@@ -23,6 +23,7 @@
 		.offset1.span5
 
 			.comments
+				%br
 				%h5 
 					=@discussion.question
 				= render partial: 'comments/form', locals: { comment: @new_comment }
