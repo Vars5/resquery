@@ -442,10 +442,19 @@ textarea {
 .commenting-area {
 	border:0px !important;
 	background-color:#FFFFE3;
+	
 }
 
-.commenting-area:hover .commenting-area:focus {
-	border:0px !important;
+textarea.wysihtml5{
+	outline: none;
+	padding:5px;
+	border:none !important;
+	box-shadow:none !important;
+
+}
+
+textarea.wysihtml5:focus{
+	color:$text-color;
 }
 
 .dropdown {
