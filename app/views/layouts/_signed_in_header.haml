@@ -1,7 +1,11 @@
 .signed-in-header
 	.container-fluid
 		.row-fluid
-			.span12
+			.span1
+				.hidden-phone
+					= link_to 'resQuery' , root_path
+			
+			.span11
 
 
 				.visible-phone
@@ -20,7 +24,7 @@
 					
 				.pull-right.hidden-phone
 
-					= link_to 'resQuery' , root_path
+
 
 					- if current_user.role == "admin" 
 						=link_to 'Admin', 'admin_path'
