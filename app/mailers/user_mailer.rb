@@ -1,5 +1,6 @@
 class UserMailer < ActionMailer::Base
-  default from: "ResQuery <notifications@resquery.com>"
+  default from: "ResQuery <notifications@resquery.com>",
+          reply_to: "team@resquery.com"
   
   def new_group(user, current_user, group)
     @user = user

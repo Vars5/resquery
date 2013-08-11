@@ -52,4 +52,10 @@ class GroupsController < ApplicationController
     @users = @group.users.where('sign_in_count > 0')
     @pending_users = @group.users.where('sign_in_count = 0')
   end
+  
+  def links
+    @group = Group.find(params[:id])
+    @links = @group.links.reverse
+  end
+  
 end

@@ -1,0 +1,29 @@
+%br
+%br
+%br
+.row-fluid
+	.span8
+		.link-feed-title
+			%b Quality Links
+		
+
+		.link-feed
+			%ul(class="unstyled")
+				-@links.each do |link|
+					%li
+						=link_to link.title, link.link, :target => "_blank"
+						.tiny-text
+							submitted by
+							=full_name(link.user_id)
+			
+		.link-feed-title
+			%b Add a link
+
+		.link-feed	
+			.link-form
+				=form_for :link, as: :links, url: links_path(:link) do |f|
+					=f.text_field :title, :placeholder => "title"
+					=f.text_field :link, :placeholder => "url"
+					=f.hidden_field :user_id, value: current_user.id
+					=f.hidden_field :group_id, value: params[:id]
+					=f.submit "Add Link", :class => "sign-up-button"

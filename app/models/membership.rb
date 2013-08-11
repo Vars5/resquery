@@ -8,11 +8,14 @@ class Membership < ActiveRecord::Base
   def self.create_or_invite(invite, current_user)
     group = Group.find(invite[:group_id])
     if user = User.find_by_email(invite[:email])
-      UserMailer.new_group(user, current_user, group).deliver  
+      if existing_member = self.find(user.id)
+      else
+        UserMailer.new_group(user, current_user, group).deliver 
+      end
     else
       user = User.invite!({:email => invite[:email]}, current_user)
     end
-    create(:group => group, :user => user)  
+    create(:group => group, :user => user)
   end
   
   
