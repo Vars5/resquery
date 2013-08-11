@@ -1,7 +1,7 @@
 .dashboard
 	
 	.row-fluid
-		.span8
+		.span6
 			.group
 				.show_discussion
 					.discussion-top-area
@@ -10,17 +10,17 @@
 						By 
 						= @discussion.authors_first_name 
 						= @discussion.authors_last_name
+						in
+						= discussion_group(@discussion.group_id)
 			
 					%p=link_to @discussion.link, @discussion.link
 					%p= simple_format(@discussion.description,{}, :sanitize => false)
 		
 				%hr
-				.comments
-					Discuss this message:
-					%br
-					%br
-					= render partial: 'comments/comment', collection: @comments, as: :comment
-					%br
-					%br
-					= render partial: 'comments/form', locals: { comment: @new_comment }
-		.span4
+		.offset1.span5
+
+			.comments
+				%h5 
+					Do you think bezos made a good decision
+				= render partial: 'comments/form', locals: { comment: @new_comment }
+				= render partial: 'comments/comment', collection: @comments, as: :comment		
