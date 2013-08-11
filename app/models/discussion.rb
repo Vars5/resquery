@@ -1,5 +1,5 @@
 class Discussion < ActiveRecord::Base
-  attr_accessible :description, :group, :title, :user_id, :commentable, :body, :link
+  attr_accessible :description, :group, :title, :user_id, :commentable, :body, :link, :question
   
   after_create :send_notification_emails
   
