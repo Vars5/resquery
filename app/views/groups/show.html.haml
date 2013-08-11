@@ -8,9 +8,12 @@
 
 		.span4
 			.group-members
-				.pull-right
+				.pull-right.hidden-phone
+					%br
+					%br
+					%br
 					=@users.count
-					members
+					people in this group
 					-#link_to "#{@users.count} Group Members", users_group_path
 
 
