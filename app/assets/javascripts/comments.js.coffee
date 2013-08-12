@@ -17,10 +17,9 @@ jQuery ->
         .attr('disabled', 'disabled');
     .on "ajax:success", (evt, data, status, xhr) ->
       $(this).find('textarea')
-        
         .removeAttr('disabled', 'disabled')
-        .val('');
-      $(xhr.responseText).insertBefore($(this)).show('slow')
+        .val('Hello');
+      $(xhr.responseText).insertAfter($(this)).show('slow')
 				
 	# Delete a comment
 	 $(document)

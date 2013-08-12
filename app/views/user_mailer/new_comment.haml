@@ -1,9 +1,6 @@
-Hi
-= @user.first_name
-%p
-A new comment was added to 
-=@discussion.title
-%br
+%b
+	Re:
+	=@discussion.title
 %br
 = simple_format(@comment.body)
 %br
