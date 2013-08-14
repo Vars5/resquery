@@ -1,7 +1,7 @@
 .dashboard
 	
 	.row-fluid
-		.span6
+		.span7
 			.group
 				.show_discussion
 					.discussion-top-area
@@ -16,11 +16,11 @@
 							%br
 							=link_to truncate(@discussion.link), @discussion.link
 			
-					
-					%p= simple_format(@discussion.description,{}, :sanitize => false)
+					.discussion-text
+						%p= simple_format(@discussion.description)
 		
 				%hr
-		.offset1.span5
+		.offset1.span4
 
 			.comments
 				%br

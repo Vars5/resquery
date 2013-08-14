@@ -472,11 +472,14 @@ textarea.wysihtml5:focus{
 
 
 .show_discussion{
-	p{
+
 	color:#666666;
 	font-size:18px;
 	line-height:32px;
+	li{
+		line-height:32px;
 	}
+
 }
 
 
