@@ -1,11 +1,11 @@
 $(document).ready(function(){
 	
-	$('p').mouseenter(function(){
+	$('.discussion-page-overhead p').mouseenter(function(){
 		$(this).css("background-color","#00D0A1");
 		$(this).css("color","#ffffff");
 	})
 	
-	$('p ').mouseleave(function(){
+	$('.discussion-page-overhead p').mouseleave(function(){
 		$(this).css("background-color","#ffffff");
 		$(this).css("color","#0f1419");
 	})
