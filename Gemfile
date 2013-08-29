@@ -34,9 +34,9 @@ gem "bootstrap-will_paginate"
 gem "haml"
 gem 'haml-rails'
 gem 'simple_form'
-gem 'bootstrap-wysihtml5-rails'
+gem 'wysihtml5-rails'
 gem 'bootstrap-rails'
-gem 'bootstrap-wysihtml5-rails'
+
 
 gem 'newrelic_rpm'
 

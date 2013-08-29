@@ -408,11 +408,15 @@ textarea {
 .discussion-page-overhead{
 
 	p{
-		padding: 15px 15px 15px $standard-padding;
-
+		padding: 15px 30px 15px $standard-padding;
 		border-left:10px solid $light-teal;
 	}
 
+	li {
+		padding: 15px 30px 15px $standard-padding;
+		border-left:10px solid $light-teal;
+	}
+	
 	p:hover{
 		border-left:10px solid $teal;
 		background-color:$light-teal;

@@ -43,8 +43,6 @@ GEM
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
       will_paginate
-    bootstrap-wysihtml5-rails (0.3.1.21)
-      railties (>= 3.0)
     builder (3.0.4)
     cancan (1.6.9)
     coffee-rails (3.2.2)
@@ -160,6 +158,8 @@ GEM
     warden (1.2.1)
       rack (>= 1.0)
     will_paginate (3.0.4)
+    wysihtml5-rails (0.0.4)
+      railties (>= 3.1.0)
 
 PLATFORMS
   ruby
@@ -169,7 +169,6 @@ DEPENDENCIES
   bootstrap-rails
   bootstrap-sass (~> 2.3.2.0)
   bootstrap-will_paginate
-  bootstrap-wysihtml5-rails
   cancan
   coffee-rails
   devise
@@ -188,3 +187,4 @@ DEPENDENCIES
   simple_form
   sqlite3
   uglifier
+  wysihtml5-rails
