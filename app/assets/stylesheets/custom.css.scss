@@ -532,18 +532,38 @@ textarea.wysihtml5:focus{
 }
 
 .search-area{
-	margin-top:20px;
 	font-size:18px;
-	padding:10px 20px 5px;
-	background-color:$teal;
-	color:white;
+	margin-bottom:40px;
+	border-bottom:1px dotted $light-teal;
 
 }
 
-.search-box{
-	border: 0px;
-	height:25px;
-	width: 200px;
-	border-radius:4px;
-	background-color:white;
+
+
+
+.topic-area{
+	padding: 15px 30px 15px 20px;
+	border-left:10px solid $light-teal;	
+}
+
+.topic-area:hover{
+	border-left:10px solid $teal;
+}
+
+.topic-adjustment{
+	margin-right:-$standard-padding;
+}
+
+.article-box{
+	margin-top:10px;
+	width:100%;
+	height:140px;
+	background-color: $background-grey;
+	border-radius: 4px;
+}
+
+.test{
+	padding-bottom:40px;
+	border-bottom:1px solid $light-teal;
+	margin-bottom:40px;
 }
