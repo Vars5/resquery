@@ -11,4 +11,4 @@
 			.span9
 				=content_tag "div", class: "show-discussion", data: {discussion: @discussion.id} do
 					-# next thing to do is to get the paragrahs with a data-number
-					%p= unsimple_format(@discussion.description)
+					= simple_format(@discussion.description)
