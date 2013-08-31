@@ -12,20 +12,17 @@
      <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 	</head>
 	
-	<script type="text/javascript">
-	  $('.wysihtml5').each(function(i, elem) {
-	    $(elem).wysihtml5();
-	  });
-	</script>
+
 	
 	<body>
+	
+
 		
 	<% if signed_in? %>
 
 		<%= render 'layouts/signed_in_header'%>
 		<div class="container">
 			<div class="row-fluid">
-
 				<div class="span12">
 			   	<%= yield %>
 				</div>
@@ -39,6 +36,14 @@
 		<%=render 'layouts/footer'%>
 
 	<% end %>
+
+	<script>
+	  var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
+	    toolbar:      "wysihtml5-toolbar", // id of toolbar element
+	    stylesheets:  "<%= stylesheet_path('wysiwyg') %>", // optional, css to style the editor's content
+	    parserRules:  wysihtml5ParserRules // defined in parser rules set
+	  });
+	</script>
 
 	</body>
 </html>

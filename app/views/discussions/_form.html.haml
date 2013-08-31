@@ -1,4 +1,7 @@
 
+
+
+
 .form-horizontal
 	= form_for [@group, @discussion] do |f|
 		.control-group
@@ -17,7 +20,8 @@
 			= f.label :description , :class=>"control-label"
 				
 			.controls
-				= f.text_area :description, :placeholder => "Description", :class=>"wysihtml5"
+				= render 'layouts/wysihtml5'
+				= f.text_area :description, :placeholder => "Description", :id => 'wysihtml5-textarea'
 				= f.hidden_field :user_id, :value => current_user.id
 				%br
 				%br
