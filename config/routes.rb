@@ -1,5 +1,11 @@
 Resquery::Application.routes.draw do
   
+  get "topics/new"
+
+  get "topics/show"
+
+  get "topics/edit"
+
   root :to => 'dashboards#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'staticpages#home'
 
