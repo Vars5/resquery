@@ -1,5 +1,5 @@
 Resquery::Application.routes.draw do
-  
+
   root :to => 'dashboards#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'staticpages#home'
 
@@ -14,7 +14,12 @@ Resquery::Application.routes.draw do
 
   resources :groups do 
     resources :discussions
+    resources :topics
   end
+  
+  resources :articles
+  
+  resources :articletopics, only: [:create, :destroy]
   
   resources :memberships, only: [:create, :update, :destroy]
 
