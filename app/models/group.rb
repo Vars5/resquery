@@ -9,6 +9,8 @@ class Group < ActiveRecord::Base
   has_many :discussions
   has_many :notifications, dependent: :destroy
   has_many :links
+  
+  has_many :topics
 
   
 end
