@@ -17,8 +17,9 @@ Resquery::Application.routes.draw do
     resources :topics
   end
   
-  resources :articles 
+  resources :articles
   
+  resources :articletopics, only: [:create, :destroy]
   
   resources :memberships, only: [:create, :update, :destroy]
 
