@@ -1,23 +1,18 @@
-.dashboard
+%h3(class="main-title-text")= @group.name 
+
+
+.search-area
 	.row-fluid
 		.span8
-			%h3
-				%span(class="light-grey") rQ/ 
-				%span(class="main-title-text")= @group.name 
-			%p(class="small-text")= @group.description
-
+			Look for stuff
 		.span4
-			.group-members
-				.pull-right.hidden-phone
-					%br
-					%br
-					%br
-					=@users.count
-					people in this group
-					-#link_to "#{@users.count} Group Members", users_group_path
+			.pull-right
+				=form_for :test do |f|
+					=f.text_field :test, :placeholder => "moo", :class => "search-b"
 
 
-	%hr 
+
+
 
 .row-fluid
 	.span8
@@ -25,13 +20,13 @@
 			%h4
 				Discussions
 				&nbsp &nbsp &nbsp
-				=link_to "Add a New Discussion", new_group_discussion_path(@group), :class => "yellow-button"
+				-#link_to "Add a New Discussion", new_group_discussion_path(@group), :class => "yellow-button"
 			
 
 	
 		.discussions
 			-@discussions.each do |discussion|
-				.discussion-unit
+				= content_tag "div", class: "discussion-unit" do
 					%b(class="discussion-title")
 						=link_to discussion.title, [@group, discussion]
 					\ -

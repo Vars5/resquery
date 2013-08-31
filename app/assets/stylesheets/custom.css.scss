@@ -27,12 +27,17 @@ $green:  #39b54a;
 $light-aqua: #B9D9D7;
 $fade-aqua: #E8F2F2;
 $aqua-midpoint:#73B370;
-$standard-padding:30px;
+$standard-padding:40px;
 $orange: #E8A00C;
 $dark-blue:#07376E;
 
+$light-teal: #EDFCF8;
+$teal: #00D0A1;
+
 $mustard: #E8A00C;
 $light-mustard: #F7DCA7;
+
+$border-width:15px;
 
 @in-case{ font-family: 'Libre Baskerville', serif;}
 
@@ -49,7 +54,7 @@ body {
 /* bootstrap responsive adjustments*/
 	@media (min-width: 1200px) {
 	  .span12, .container {
-	    width: 1170px;
+	    width: 940px;
 	  }
 	}
 
@@ -154,6 +159,17 @@ textarea {
 		width:204px;
 	}
 }
+
+.signed-in-logo{
+	img {
+		padding-top:30px;
+		padding-bottom:20px;
+		height:39px;
+		width:143px;
+	}
+}
+
+
 
 .sign-in-button{
 	font-size:23px;
@@ -319,6 +335,7 @@ textarea {
 }
 
 .main-title-text{
+	font-size:25px;
 	font-weight:700;
 }
 
@@ -357,10 +374,6 @@ textarea {
 	}
 }
 
-.discussion-top-area{
-	padding-bottom:5px;
-	border-bottom:1px dotted $aqua;
-}
 
 .discussion-title{
 	a{
@@ -385,7 +398,6 @@ textarea {
 }
 
 .comment-button{
-
 	padding: 3px 15px;
     background: $light-green;
 	color:$aqua;
@@ -393,12 +405,40 @@ textarea {
 	border: solid 1px $aqua-midpoint;	
 }
 
-.discussion_heading{
-	font-weight:700;
-	font-size:35px;
-	line-height:35px;
-	padding:20px 0px;
+.discussion-page-overhead{
+
+	p{
+		padding: 15px 30px 15px $standard-padding;
+		border-left:10px solid $light-teal;
+	}
+
+	li {
+		padding: 15px 30px 15px $standard-padding;
+		border-left:10px solid $light-teal;
+	}
+	
+	p:hover{
+		border-left:10px solid $teal;
+		background-color:$light-teal;
+	}
+
+	.discussion-heading{
+		border-left:10px solid $light-teal;
+		font-weight:700;
+		font-size:30px;
+		line-height:45px;
+		padding-left:$standard-padding;
+		margin-bottom:30px;
+	}
+
+	.discussion-heading:hover{
+		border-left:10px solid $teal;
+	}
+
 }
+
+
+
 
 
 
@@ -409,8 +449,6 @@ textarea {
 	padding:10px;
 	border-top:$aqua 5px solid;
 	border-bottom:$aqua 1px dotted;
-
-
 }
 
 .link-feed{
@@ -434,10 +472,6 @@ textarea {
 .strikethrough{
 	text-decoration:line-through;
 }
-
-
-
-
 
 .commenting-area {
 
@@ -471,15 +505,45 @@ textarea.wysihtml5:focus{
 }
 
 
-.show_discussion{
-	p{
-	color:#666666;
-	font-size:18px;
-	line-height:32px;
+.show-discussion{
+	font-size:16px;
+	line-height:25px;
+	li{
+		line-height:30px;
+		padding-bottom:20px;
 	}
+
 }
 
 
 .comments{
 
+}
+
+.groups-bar{
+	background-color:$light-grey;
+	padding:5px;
+	margin:30px 0px;
+}
+
+
+.title-area{
+	padding-bottom:60px;
+}
+
+.search-area{
+	margin-top:20px;
+	font-size:18px;
+	padding:10px 20px 5px;
+	background-color:$teal;
+	color:white;
+
+}
+
+.search-box{
+	border: 0px;
+	height:25px;
+	width: 200px;
+	border-radius:4px;
+	background-color:white;
 }

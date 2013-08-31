@@ -9,5 +9,6 @@ module ApplicationHelper
     discussion_group = Group.find_by_id(group_id)
 		link_to discussion_group.name, discussion_group
   end
+  
 
 end
