@@ -26,6 +26,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @show_hero = true
     @group = Group.find(params[:id])
     @discussions = @group.discussions.reverse
     @users = @group.users.where('sign_in_count > 0')

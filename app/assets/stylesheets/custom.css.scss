@@ -289,7 +289,6 @@ textarea {
 /* ========= SECTION 6: DASHBOARD =========*/
 
 .dashboard{
-	padding-top:35px;
 	h4{
 		color:$aqua;
 		font-size:19px;
@@ -562,6 +561,8 @@ textarea.wysihtml5:focus{
 }
 
 .article-box{
+	padding-top:20px;
+	text-align:center;
 	margin-top:10px;
 	width:100%;
 	height:140px;

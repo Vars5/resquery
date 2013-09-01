@@ -19,20 +19,14 @@
 			.span4.topic-area
 				%h4= topic.name
 				%p= topic.description 
+
 			.span8
 				.row-fluid
+				- topic.get_articles.each do |article|
 					.span3.article-box
+						=link_to [@group, article] do  
+							%b=article.name
 
-					.span3.article-box
-
-					.span3.article-box
-				
-					.span3.article-box
-				.row-fluid
-					.span3.article-box
-					.span3.article-box
-					.span3.article-box
-					.span3.article-box
 		
 				
 

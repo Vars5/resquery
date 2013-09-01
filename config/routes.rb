@@ -13,11 +13,12 @@ Resquery::Application.routes.draw do
   devise_for :users
 
   resources :groups do 
+    resources :articles
     resources :discussions
     resources :topics
   end
   
-  resources :articles
+  
   
   resources :articletopics, only: [:create, :destroy]
   
