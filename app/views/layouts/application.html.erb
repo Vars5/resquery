@@ -21,6 +21,11 @@
 	<% if signed_in? %>
 
 		<%= render 'layouts/signed_in_header'%>
+		<%# if @pageimage != nil %>
+		<% if @group != nil%>
+			<%= render 'layouts/page_image'%>
+		<%# end %>
+		<% end %>
 		<div class="container">
 			<div class="row-fluid">
 				<div class="span12">

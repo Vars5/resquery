@@ -1,0 +1,28 @@
+<div class="full-width-background"
+		style="background-image: url('https://a1.muscache.com/locations/uploads/city/hero/22/0_2831_95_1567_hero_USA_Manhattan_Skyline_061_EO.jpg');">
+
+<div class="container">
+	<div class="main-title-text">
+		<h2><%= @group.name %></h2>
+	</div>
+	
+	
+<div class="search-area">
+	<div class="row-fluid">
+		<div class="span8">
+			<%= @group.description %>
+		</div>	
+		<div class="span4">
+			<div class="pull-right">
+				<%= form_for :test do |f| %>
+				<div class="search-box">
+					<%=f.text_field :test, :placeholder => "Search for items" %>
+				</div>
+				<% end %>
+			</div>
+		</div>	
+	</div>
+</div>
+</div>
+
+</div>

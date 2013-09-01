@@ -40,7 +40,7 @@ $(document).ready(function(){
 	
 	//On page load, have the browser automatically focus on the search-box so users can start searching asap
 	$(function(){
-	    $(".search-box").focus();
+	    $(".search-box input").focus();
 	});
 
 })
