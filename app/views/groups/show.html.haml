@@ -26,6 +26,7 @@
 					.span3.article-box
 						=link_to [@group, article] do  
 							%b=article.name
+							%p(class="article-box-text")= truncate((article.body),length: 85)
 
 		
 				
