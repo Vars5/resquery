@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
   
   def new
-    @article = Article.new
+    @group = Group.find(params[:group_id])
+    @article = @group.articles.build
     
   end
 
@@ -15,6 +16,8 @@ class ArticlesController < ApplicationController
   end
   
   def show
+    @group = Group.find(params[:group_id]) 
+    @article = Article.find(params[:id])
   end
 
   def edit

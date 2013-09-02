@@ -1,13 +1,5 @@
 .dashboard
-	%h4
-		All Groups
-	%p(class="small-text") Groups should always be progressing to to a more fundamental, practical and insightful understanding of the world
-	
-	%hr
-	
-	-# Current Dashboard only lists 6 groups. Will need to have a long term fix for this later
-	
-	
+
 	-if @groups.count != 0
 		.row-fluid	
 			-@groups[0..2].each do |group|
