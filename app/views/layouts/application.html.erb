@@ -21,11 +21,19 @@
 	<% if signed_in? %>
 
 		<%= render 'layouts/signed_in_header'%>
+		
+		<%# tests with full width images outside of container%>
 		<%# if @pageimage != nil %>
 		<% if @show_hero == true %>
 			<%= render 'layouts/page_image'%>
-		<%# end %>
 		<% end %>
+		<%# end %>
+		
+		<% if @show_dashboard == true%>
+		
+			<%= render 'layouts/dashboard_top'%>
+		<% end %>
+		
 		<div class="container">
 			<div class="row-fluid">
 				<div class="span12">
