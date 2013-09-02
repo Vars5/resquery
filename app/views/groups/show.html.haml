@@ -1,20 +1,37 @@
-%h3(class="main-title-text")= @group.name 
+.hidden
+	%h3(class="main-title-text")= @group.name 
 
 
-.search-area
+.search-area.hidden
 	.row-fluid
 		.span8
-			Look for stuff
+			= @group.description
 		.span4
 			.pull-right
 				=form_for :test do |f|
-					=f.text_field :test, :placeholder => "moo", :class => "search-b"
+					.search-box
+						=f.text_field :test, :placeholder => "Search for items"
 
 
+.test
+	- @topics.each do |topic|
+		.row-fluid.topic-hub
+			.span4.topic-area
+				%h4= topic.name
+				%p= topic.description 
+
+			.span8
+				.row-fluid
+				- topic.get_articles.each do |article|
+					.span3.article-box
+						=link_to [@group, article] do  
+							%b=article.name
+
+		
+				
 
 
-
-.row-fluid
+.row-fluid.hidden
 	.span8
 		.updates
 			%h4

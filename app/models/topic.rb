@@ -6,6 +6,15 @@ class Topic < ActiveRecord::Base
   has_many :articletopics
   has_many :articles, through: :articletopics
 
+
+
+
+
+  def get_articles
+    Article.where(:topic_id => self.id)
+  end
+
+
 end
 
 

@@ -9,12 +9,12 @@ $(document).ready(function(){
 	})
 	
 	//On mousehover, background becomes light-teal
-	$('.discussion-page-overhead p, .discussion-heading, .dicussion-page-overhead li').mouseenter(function(){
+	$('.discussion-page-overhead p, .dicussion-page-overhead li').mouseenter(function(){
 		$(this).css("background-color","#EDFCF8");
 	})
 	
 	//On release of mmousehover, revert text back to normal
-	$('.discussion-page-overhead p, .discussion-heading, .dicussion-page-overhead li').mouseleave(function(){
+	$('.discussion-page-overhead p, .dicussion-page-overhead li').mouseleave(function(){
 		$(this).css("background-color","#ffffff");
 		$(this).css("color","#0f1419");
 	})
@@ -29,5 +29,19 @@ $(document).ready(function(){
 			$(this).fadeTo('slow', 1);
 	})
 	
+	
+	$('.article-box').hover(function(){
+		$(this).css("background-color","#EDFCF8");
+	})
+	
+	$('.article-box').mouseleave(function(){
+		$(this).css("background-color","#00D0A1");
+	})
+	
+	//On page load, have the browser automatically focus on the search-box so users can start searching asap
+	$(function(){
+	    $(".search-box input").focus();
+	});
+
 })
 

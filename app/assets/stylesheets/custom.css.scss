@@ -68,7 +68,7 @@ body {
 		}
 
 	}
-
+	
 
 input {
 	width:95%;
@@ -289,7 +289,6 @@ textarea {
 /* ========= SECTION 6: DASHBOARD =========*/
 
 .dashboard{
-	padding-top:35px;
 	h4{
 		color:$aqua;
 		font-size:19px;
@@ -335,6 +334,10 @@ textarea {
 }
 
 .main-title-text{
+	/* this shadow is for when we implement hero areas*/
+	text-shadow: 0 1px 7px #000;
+
+	padding-top:90px;
 	font-size:25px;
 	font-weight:700;
 }
@@ -423,6 +426,7 @@ textarea {
 	}
 
 	.discussion-heading{
+		margin-top:70px;
 		border-left:10px solid $light-teal;
 		font-weight:700;
 		font-size:30px;
@@ -532,18 +536,62 @@ textarea.wysihtml5:focus{
 }
 
 .search-area{
-	margin-top:20px;
-	font-size:18px;
-	padding:10px 20px 5px;
-	background-color:$teal;
-	color:white;
+	font-size:16px;
+	margin-bottom:40px;
+	/* this shadow is for when we implement hero areas*/
+	text-shadow: 0 1px 7px #000;
 
 }
 
+
+.topic-hub{
+	margin-bottom:40px;
+}
+
+.topic-area{
+	padding: 15px 30px 15px 20px;
+	border-left:10px solid $light-teal;	
+}
+
+.topic-area:hover{
+	border-left:10px solid $teal;
+}
+
+.topic-adjustment{
+	margin-right:-$standard-padding;
+}
+
+.article-box{
+	padding-top:20px;
+	text-align:center;
+	margin-top:10px;
+	width:100%;
+	height:140px;
+	background-color: $background-grey;
+	border-radius: 4px;
+}
+
+.test{
+	padding-bottom:40px;
+	border-bottom:1px solid $light-teal;
+	margin-bottom:40px;
+}
+
+
 .search-box{
-	border: 0px;
-	height:25px;
-	width: 200px;
-	border-radius:4px;
-	background-color:white;
+	input{
+		border:1px solid $teal !important;
+		padding:10px 0px 10px 10px;
+	}
+}
+
+.full-width-background{
+	color:white;
+	height:290px;
+	margin-bottom:60px;
+	margin-top:10px;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-color:#a5a5a5;	
+	background-position: 50% 50%;
 }

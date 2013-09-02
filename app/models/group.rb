@@ -6,6 +6,7 @@ class Group < ActiveRecord::Base
   has_many :users, through: :memberships
   accepts_nested_attributes_for :memberships
   
+  has_many :articles
   has_many :discussions
   has_many :notifications, dependent: :destroy
   has_many :links
