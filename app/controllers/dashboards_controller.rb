@@ -5,6 +5,7 @@ class DashboardsController < ApplicationController
   def dashboard
     @groups = current_user.groups
     @notifications = current_user.notifications.where(:active => true ) 
+    @show_dashboard = true
   end
   
   def test_group

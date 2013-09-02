@@ -304,13 +304,17 @@ textarea {
 	margin-top:10px;
 	width:100%;
 	height:190px;
-	background-color: $background-grey;
-	border-radius: 4px;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-color:#a5a5a5;	
+	background-position: 50% 50%;
+	border-radius: 3px;
 }
 
 .box-info{
 	padding:20px;
-	color: $text-color;
+	color: white;
+	text-shadow: 0 1px 1px #000;
 }
 
 .small-text{
@@ -330,6 +334,7 @@ textarea {
 
 
 .group-name{
+	font-size:17px;
 	margin-bottom:13px;
 }
 
@@ -432,7 +437,7 @@ textarea {
 		font-size:30px;
 		line-height:45px;
 		padding-left:$standard-padding;
-		margin-bottom:30px;
+		margin-bottom:50px;
 	}
 
 	.discussion-heading:hover{
@@ -562,7 +567,7 @@ textarea.wysihtml5:focus{
 }
 
 .article-box{
-	padding-top:20px;
+	padding:20px 5px 5px;
 	text-align:center;
 	margin-top:10px;
 	width:100%;
@@ -589,9 +594,27 @@ textarea.wysihtml5:focus{
 	color:white;
 	height:290px;
 	margin-bottom:60px;
-	margin-top:10px;
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-color:#a5a5a5;	
 	background-position: 50% 50%;
+}
+
+.article-box-text{
+	font-size:11px;
+	line-height:14px;
+}
+
+.second-area{
+	/*background-color:$light-teal;*/
+}
+
+.dashboard-top{
+	background-color: $light-teal;
+	height:100px;
+	line-height:35px;
+	padding-top:40px;
+	color: $teal;
+	font-size:30px;
+	margin-bottom:30px;
 }
