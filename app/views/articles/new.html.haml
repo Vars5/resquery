@@ -2,7 +2,7 @@
 	= f.text_field :name, :placeholder => "Name"
 	= render 'layouts/wysihtml5'
 	= f.text_area :body, :placeholder => "Text", :id => 'wysihtml5-textarea' 
-	= f.hidden_field :user_id, :value => current_user.id
+	- #f.hidden_field :user_id, :value => current_user.id
 	= f.text_field :topic_id, :placeholder => "Topic Id"
 	= f.hidden_field :group_id, :value => (params[:group_id])	
 	= f.fields_for :articletopics do |f|

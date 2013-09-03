@@ -43,5 +43,19 @@ $(document).ready(function(){
 	    $(".search-box input").focus();
 	});
 
+	$(".show-discussion p").click(function(){
+		//console.log(this.attr('id'));
+		show_form(this)
+	})
+
+
 })
+
+function show_form(paragraph){
+	$(paragraph).css("background-color","red");
+	$("#test_box").fadeIn('fast')
+	$("#test_box").toggleClass("hidden")
+	$("#paragraph-input").val($(paragraph).attr("id"))
+}
+
 

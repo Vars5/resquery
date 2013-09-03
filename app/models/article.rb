@@ -12,4 +12,13 @@ class Article < ActiveRecord::Base
   validates :name, :presence => true
   
   
+  before_save :add_ids_to_paragraphs
+  
+  def add_ids_to_paragraphs
+    self.body.scan(/<p>.*?<\/p>/).each_with_index do |paragraph,index|
+      self.body = self.body.sub(paragraph, paragraph.sub("<p>","<p id='paragraph_#{index+1}'>"))
+    end
+  end
+
+
 end
