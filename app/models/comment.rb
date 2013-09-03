@@ -72,4 +72,14 @@ class Comment < ActiveRecord::Base
     end
   end
 
+
+  before_save :add_ids_to_paragraphs
+  
+  def add_ids_to_paragraphs
+    self.body.match(/<p>.*<\/p>/).each_with_index do |paragraph,index|
+      self.body = self.body.sub(paragraph, paragraph.sub("<p>","<p id='comment_#{id}_paragraph_#{index}'"))
+    end
+  end
+    
+
 end
