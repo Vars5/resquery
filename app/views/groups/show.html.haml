@@ -19,14 +19,16 @@
 			.span4.topic-area
 				%h4= topic.name
 				%p= topic.description 
-
+	
 			.span8
-				.row-fluid
-				- topic.get_articles.each do |article|
-					.span3.article-box
-						=link_to [@group, article] do  
-							%b=article.name
-							%p(class="article-box-text")= truncate((article.body),length: 85)
+
+				- topic.get_articles.each_slice(4).to_a.each do |group|
+					.row-fluid
+						- group.each do |article|
+							.span3.article-box
+								=link_to [@group, article] do  
+									%b=article.name
+									%p(class="article-box-text")= truncate((article.body),length: 85)
 
 		
 				

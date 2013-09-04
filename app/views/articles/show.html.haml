@@ -11,4 +11,9 @@
 			.span9
 				=content_tag "div", class: "show-discussion", data: {discussion: @article.id} do
 					-# next thing to do is to get the paragrahs with a data-number
-					= simple_format(@article.body)
+					= simple_format(@article.body, {}, :sanitize => false)
+					
+#test_box(class="hidden")
+	=form_for :test do |f|
+		=f.text_field :test, :placeholder => "test"
+		=f.hidden_field :test_paragraph, :id => "paragraph-input" 
