@@ -46,16 +46,35 @@ $(document).ready(function(){
 	$(".show-discussion p").click(function(){
 		//console.log(this.attr('id'));
 		show_form(this)
+		move_form("#test_box", this)
 	})
 
 
 })
 
 function show_form(paragraph){
-	$(paragraph).css("background-color","red");
-	$("#test_box").fadeIn('fast')
-	$("#test_box").toggleClass("hidden")
+	$("#test_box").removeClass("hidden")
 	$("#paragraph-input").val($(paragraph).attr("id"))
 }
 
+function move_form(form, paragraph){
+	var vertical_difference = get_vertical_difference(form, paragraph);
+	//trying to get animate to be dynamic
+	var animate_box = vertical_difference
+	$('input[name="test[test]"]').val(vertical_difference)
+	$(form).css("position","relative");
+	$(form).animate({
+		top: "-="+vertical_difference+"px"
+	  }, 300, function() {
+	    // Animation complete.
+	  });
+	
+}
+
+function get_vertical_difference(box, paragraph){
+	var position_of_box = $(box).position();
+	var position_of_paragraph = $(paragraph).position();
+	var vertical_difference = position_of_box.top - position_of_paragraph.top;
+	return vertical_difference;
+}
 

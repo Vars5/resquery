@@ -50,7 +50,7 @@
 					%b(class="discussion-title")
 						=link_to discussion.title, [@group, discussion]
 					\ -
-					=link_to truncate((strip_tags(discussion.description)), :length => 140), [@group, discussion]
+					=link_to simple_format(truncate((strip_tags(discussion.description)), :length => 140)), [@group, discussion]
 					.pull-right
 						=# discussion.created_at.strftime("%e %b")
 
