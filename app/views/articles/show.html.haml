@@ -12,8 +12,6 @@
 				=content_tag "div", class: "show-discussion", data: {discussion: @article.id} do
 					-# next thing to do is to get the paragrahs with a data-number
 					= simple_format(@article.body, {}, :sanitize => false)
-
-
 					
 #test_box(class="hidden")
 	= form_for @new_comment do |f|
