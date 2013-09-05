@@ -44,7 +44,6 @@ $(document).ready(function(){
 	});
 
 	$(".show-discussion p").click(function(){
-		//console.log(this.attr('id'));
 		show_form(this)
 		move_form("#test_box", this)
 	})
@@ -59,22 +58,19 @@ function show_form(paragraph){
 
 function move_form(form, paragraph){
 	var vertical_difference = get_vertical_difference(form, paragraph);
-	//trying to get animate to be dynamic
 	var animate_box = vertical_difference
 	$('input[name="test[test]"]').val(vertical_difference)
 	$(form).css("position","relative");
 	$(form).animate({
 		top: "-="+vertical_difference+"px"
-	  }, 300, function() {
-	    // Animation complete.
-	  });
+	  }, 300);
 	
 }
 
 function get_vertical_difference(box, paragraph){
-	var position_of_box = $(box).position();
-	var position_of_paragraph = $(paragraph).position();
-	var vertical_difference = position_of_box.top - position_of_paragraph.top;
+	var position_of_box = $(box).position().top;
+	var position_of_paragraph = $(paragraph).position().top;
+	var vertical_difference = position_of_box - position_of_paragraph;
 	return vertical_difference;
 }
 
