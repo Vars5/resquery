@@ -11,6 +11,9 @@ class Article < ActiveRecord::Base
   validates :body, :presence => true
   validates :name, :presence => true
   
+  #comments
+  acts_as_commentable
+  
   
   before_save :add_ids_to_paragraphs
   

@@ -19,6 +19,8 @@ class ArticlesController < ApplicationController
   def show
     @group = Group.find(params[:group_id]) 
     @article = Article.find(params[:id])
+    @comments = @article.comment_threads.order('created_at asc')
+    @new_comment = Comment.build_from(@article, current_user, "")
   end
 
   def edit

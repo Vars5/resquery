@@ -2,8 +2,6 @@ class Comment < ActiveRecord::Base
   
   attr_accessible :commentable, :body, :user_id
   
-  after_create :create_notifications
-  after_create :send_new_comment_emails
   
   acts_as_nested_set :scope => [:commentable_id, :commentable_type]
 
@@ -54,7 +52,13 @@ class Comment < ActiveRecord::Base
   def self.find_commentable(commentable_str, commentable_id)
     commentable_str.constantize.find(commentable_id)
   end
-    
+
+=begin  
+
+  after_create :create_notifications
+  after_create :send_new_comment_emails
+  
+  
   def create_notifications
     group = commentable.group
     group.users.each do |user|
@@ -80,6 +84,6 @@ class Comment < ActiveRecord::Base
       self.body = self.body.sub(paragraph, paragraph.sub("<p>","<p id='comment_#{id}_paragraph_#{index}'"))
     end
   end
-    
+=end
 
 end
