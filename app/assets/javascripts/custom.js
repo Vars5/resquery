@@ -44,18 +44,33 @@ $(document).ready(function(){
 	});
 
 	$(".show-discussion p").click(function(){
-		//console.log(this.attr('id'));
 		show_form(this)
+		move_form("#test_box", this)
 	})
 
 
 })
 
 function show_form(paragraph){
-	$(paragraph).css("background-color","red");
-	$("#test_box").fadeIn('fast')
-	$("#test_box").toggleClass("hidden")
+	$("#test_box").removeClass("hidden")
 	$("#paragraph-input").val($(paragraph).attr("id"))
 }
 
+function move_form(form, paragraph){
+	var vertical_difference = get_vertical_difference(form, paragraph);
+	var animate_box = vertical_difference
+	$('input[name="test[test]"]').val(vertical_difference)
+	$(form).css("position","relative");
+	$(form).animate({
+		top: "-="+vertical_difference+"px"
+	  }, 300);
+	
+}
+
+function get_vertical_difference(box, paragraph){
+	var position_of_box = $(box).position().top;
+	var position_of_paragraph = $(paragraph).position().top;
+	var vertical_difference = position_of_box - position_of_paragraph;
+	return vertical_difference;
+}
 
