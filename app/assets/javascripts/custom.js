@@ -43,11 +43,12 @@ $(document).ready(function(){
 	    $(".search-box input").focus();
 	});
 
+	//On clicking a paragraph, set the comment box ready
 	$(".show-discussion p").click(function(){
-		show_form(this)
-		move_form("#test_box", this)
-		var paragraph_height = $(this).height();
-		$('.article-note-box textarea').css("height", paragraph_height+"px")
+		show_form(this);
+		move_form("#test_box", this);
+		resize_form(this);
+		set_paragraph_to_form(this);
 	})
 
 
@@ -75,4 +76,13 @@ function get_vertical_difference(box, paragraph){
 	var position_of_paragraph = $(paragraph).position().top;
 	var vertical_difference = position_of_box - position_of_paragraph;
 	return vertical_difference;
+}
+
+function resize_form(paragraph){
+	var paragraph_height = $(paragraph).height();
+	$('.article-note-box textarea').css("height", paragraph_height+"px")
+}
+
+function set_paragraph_to_form(paragraph){
+	$('#paragraph-value').val($(paragraph).attr("id"));
 }
