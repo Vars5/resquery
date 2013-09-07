@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+
+  before_filter :authenticate_user!
   
   def new
     @group = Group.find(params[:group_id])
@@ -24,5 +26,15 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:group_id])
+    @article = @group.articles.find_by_id(params[:id])
+  end
+  
+  def update
+    @article = Article.find_by_id(params[:article])
+    @article.update_attributes(params[:article])
+    if @article.save
+      redirect_to root_path
+    end
   end
 end

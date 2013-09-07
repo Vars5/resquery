@@ -54,7 +54,7 @@ body {
 /* bootstrap responsive adjustments*/
 	@media (min-width: 1200px) {
 	  .span12, .container {
-	    width: 940px;
+	    width: 1170;
 	  }
 	}
 
@@ -515,8 +515,8 @@ textarea.wysihtml5:focus{
 
 
 .show-discussion{
-	font-size:16px;
-	line-height:25px;
+	font-size:18px;
+	line-height:29px;
 	li{
 		line-height:30px;
 		padding-bottom:20px;
@@ -584,8 +584,9 @@ textarea.wysihtml5:focus{
 
 
 .search-box{
+	padding-top:30px;
 	input{
-		border:1px solid $teal !important;
+		border:1px solid $aqua !important;
 		padding:10px 0px 10px 10px;
 	}
 }
@@ -622,4 +623,22 @@ textarea.wysihtml5:focus{
 
 #test-box{
 	position:relative;
+}
+
+.article-note-box{
+	textarea {
+		background-color: $light-teal;
+		box-shadow:none;
+		font-size:14px;
+		border: 0px !important;
+		padding:0px !important;
+
+	}
+}
+
+.notes-area{
+	font-size:14px;
+	margin-left:-20px;
+	padding:15px;
+	background-color:$light-teal;
 }

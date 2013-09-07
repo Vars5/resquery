@@ -46,7 +46,10 @@ $(document).ready(function(){
 	$(".show-discussion p").click(function(){
 		show_form(this)
 		move_form("#test_box", this)
+		var paragraph_height = $(this).height();
+		$('.article-note-box textarea').css("height", paragraph_height+"px")
 	})
+
 
 
 })
@@ -59,11 +62,11 @@ function show_form(paragraph){
 function move_form(form, paragraph){
 	var vertical_difference = get_vertical_difference(form, paragraph);
 	var animate_box = vertical_difference
-	$('input[name="test[test]"]').val(vertical_difference)
+
 	$(form).css("position","relative");
 	$(form).animate({
 		top: "-="+vertical_difference+"px"
-	  }, 300);
+	  }, 0);
 	
 }
 
@@ -73,4 +76,3 @@ function get_vertical_difference(box, paragraph){
 	var vertical_difference = position_of_box - position_of_paragraph;
 	return vertical_difference;
 }
-

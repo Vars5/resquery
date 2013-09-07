@@ -8,18 +8,20 @@
 
 
 		.row-fluid
-			.span9
+			.span8
 				=content_tag "div", class: "show-discussion", data: {discussion: @article.id} do
 					-# next thing to do is to get the paragrahs with a data-number
 					= simple_format(@article.body, {}, :sanitize => false)
-					
-#test_box(class="hidden")
-	= form_for @new_comment do |f|
-		= f.text_field :body
-		= f.hidden_field :commentable_id, :value => @new_comment.commentable_id
-		= f.hidden_field :commentable_type, :value => @new_comment.commentable_type
-		= f.hidden_field :subject, :value => 
-		= f.submit :class => "comment-button", :disable_with => "Submitting…"
+			.span4.hidden-phone
+				.notes-area#test_box(class="hidden")
+					%b Add a note
+					.article-note-box
+						= form_for @new_comment do |f|
+							= f.text_area :body, :placeholder => "Leave a note", :id => "comment-area"
+							= f.hidden_field :commentable_id, :value => @new_comment.commentable_id
+							= f.hidden_field :commentable_type, :value => @new_comment.commentable_type
+							= f.hidden_field :subject, :value => "test"
+							= f.submit :class => "comment-button", :disable_with => "Submitting…"
 		
 		
 		
