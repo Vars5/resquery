@@ -5,8 +5,5 @@
 	- #f.hidden_field :user_id, :value => current_user.id
 	= f.text_field :topic_id, :placeholder => "Topic Id"
 	= f.hidden_field :group_id, :value => (params[:group_id])	
-	= f.fields_for :articletopics do |a|
-		= a.hidden_field :user_id, :value => current_user.id
-		= a.hidden_field :parent, :value => true
 
 	=f.submit

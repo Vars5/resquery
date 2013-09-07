@@ -27,8 +27,8 @@
 						- group.each do |article|
 							.span3.article-box
 								=link_to [@group, article] do  
-									%b=article.name
-									%p(class="article-box-text")= truncate((article.body),length: 85)
+									%span(class="article-title-box")= article.name
+									%p(class="article-box-text")= strip_tags(truncate((article.body),length: 85))
 
 		
 				

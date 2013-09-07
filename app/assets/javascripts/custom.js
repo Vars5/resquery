@@ -3,9 +3,10 @@ $(document).ready(function(){
 	//Discussion Page Items
 	//Make the background teal & text white on click
 	$('.discussion-page-overhead p, .dicussion-page-overhead li').click(function(){
-		$(this).css("background-color","#00D0A1");
-		$(this).css("color","#ffffff");
+		//$(this).css("background-color","#00D0A1");
+		//$(this).css("color","#ffffff");
 		//$(this).width($(this).width()+400)
+		$(this).css("background-color","#EDFCF8");
 	})
 	
 	//On mousehover, background becomes light-teal
@@ -49,6 +50,7 @@ $(document).ready(function(){
 		move_form("#test_box", this);
 		resize_form(this);
 		set_paragraph_to_form(this);
+		$("#comment-area").focus();
 	})
 
 

@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
   end
   
   def update
-    @article = Article.find_by_id(params[:article])
+    @article = Article.find(params[:id])
     @article.update_attributes(params[:article])
     if @article.save
       redirect_to root_path

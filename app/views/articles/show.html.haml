@@ -8,14 +8,14 @@
 		.row-fluid
 			.span8
 				=content_tag "div", class: "show-discussion", data: {discussion: @article.id} do
-					= simple_format(@article.body, {}, :sanitize => false)
+					= resquery_format(@article.body, {}, :sanitize => false)
 			.span4.hidden-phone
 				.notes-area#test_box(class="hidden")
 					%b Add a note
 					.article-note-box
 						= form_for @new_comment do |f|
-							= f.text_area :body, :placeholder => "Leave a note", :id => "comment-area"
+							= f.text_area :body, :placeholder => "Type up your insights", :id => "comment-area"
 							= f.hidden_field :commentable_id, :value => @new_comment.commentable_id
 							= f.hidden_field :commentable_type, :value => @new_comment.commentable_type
 							= f.hidden_field :paragraph_id, :value => "null", :id => "paragraph-value"
-							= f.submit :class => "comment-button", :disable_with => "Submitting…"
+							= f.submit :value => "Save", :class => "comment-button", :disable_with => "Submitting…"
