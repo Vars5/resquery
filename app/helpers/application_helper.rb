@@ -10,7 +10,7 @@ module ApplicationHelper
 		link_to discussion_group.name, discussion_group
   end
   
-  #removes the default <p> that's added
+  #removes the default <p> that's added from simple_format so we can show paragraphs correctly
   def resquery_format(text, html_options={}, options={})
       text = '' if text.nil?
       text = text.dup

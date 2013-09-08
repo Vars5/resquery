@@ -2,7 +2,8 @@
 	.row-fluid
 		.span8
 			=form_for [@group, @article] do |f|
-				= f.text_field :name, :placeholder => "Name", :class => "new-article-title"
+				.new-article-title
+					= f.text_area :name, :placeholder => "Type your title"
 				= render 'layouts/wysihtml5'
 				= f.text_area :body, :placeholder => "Start Typing your article here", :id => 'wysihtml5-textarea', :class => "new-article-area" 
 				- #f.hidden_field :user_id, :value => current_user.id

@@ -40,20 +40,20 @@ $(document).ready(function(){
 	})
 	
 	//On page load, have the browser automatically focus on the search-box so users can start searching asap
-	$(function(){
-	    $(".search-box input").focus();
-	});
+
+	$(".search-box input").focus();
+	$(" #article_name").focus();
 
 	//On clicking a paragraph, set the comment box ready
 	$(".show-discussion p").click(function(){
 		show_form(this);
 		move_form("#test_box", this);
-		resize_form(this);
+		//resize_form(this);
 		set_paragraph_to_form(this);
 		$("#comment-area").focus();
 	})
 
-
+	$(' textarea').autosize();
 
 })
 
@@ -82,7 +82,7 @@ function get_vertical_difference(box, paragraph){
 
 function resize_form(paragraph){
 	var paragraph_height = $(paragraph).height();
-	$('.article-note-box textarea').css("height", paragraph_height+"px")
+	$('.article-note-box textarea').css("height", paragraph_height+"px").trigger('autosize.resize');
 }
 
 function set_paragraph_to_form(paragraph){
