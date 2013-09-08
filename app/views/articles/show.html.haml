@@ -1,27 +1,21 @@
 .discussion-page-overhead
 	.dashboard
-	
 		.row-fluid
 			.span7
 				.discussion-heading
 					= @article.name
 
-
 		.row-fluid
-			.span9
+			.span8
 				=content_tag "div", class: "show-discussion", data: {discussion: @article.id} do
-					-# next thing to do is to get the paragrahs with a data-number
-					= simple_format(@article.body, {}, :sanitize => false)
-					
-#test_box(class="hidden")
-	= form_for @new_comment do |f|
-		= f.text_field :body
-		= f.hidden_field :commentable_id, :value => @new_comment.commentable_id
-		= f.hidden_field :commentable_type, :value => @new_comment.commentable_type
-		= f.hidden_field :subject, :value => 
-		= f.submit :class => "comment-button", :disable_with => "Submitting…"
-		
-		
-		
-
-/		= render :partial => 'comments/form', :locals => { :comment => @new_comment }
+					= resquery_format(@article.body, {}, :sanitize => false)
+			.span4.hidden-phone
+				.notes-area#test_box(class="hidden")
+					%b Add a note
+					.article-note-box
+						= form_for @new_comment do |f|
+							= f.text_area :body, :placeholder => "Type up your insights", :id => "comment-area"
+							= f.hidden_field :commentable_id, :value => @new_comment.commentable_id
+							= f.hidden_field :commentable_type, :value => @new_comment.commentable_type
+							= f.hidden_field :paragraph_id, :value => "null", :id => "paragraph-value"
+							= f.submit :value => "Save", :class => "comment-button", :disable_with => "Submitting…"

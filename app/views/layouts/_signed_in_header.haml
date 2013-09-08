@@ -1,28 +1,17 @@
 .signed-in-header
 	.container
 		.row-fluid
-
-			
 			.span12
-				
 				.hidden-phone
 					&nbsp &nbsp	
 					- link_to 'resQuery' , root_path
-				
 					.pull-right
-
-
-
 						- if current_user.role == "admin" 
 							=link_to 'Admin', 'admin_path'
 						&nbsp &nbsp
 						= link_to 'Account Settings' , edit_user_registration_path 
 						&nbsp &nbsp
 						= link_to 'Log Out', destroy_user_session_path, :method =>"DELETE"
-				
-				
-				
-				
 				.visible-phone
 					&nbsp &nbsp	
 					= link_to 'resQuery' , root_path
@@ -35,11 +24,18 @@
 					= link_to 'Account Settings' , edit_user_registration_path 
 					&nbsp &nbsp
 					= link_to 'Log Out', destroy_user_session_path, :method =>"DELETE"
+					
 .second-area
 	.container.hidden-phone
 		.row-fluid
-			.span12
+			.span8
 				= link_to image_tag('logo.png'), root_path, :class => "signed-in-logo"
+			.span4
+				.pull-right
+					= form_for :test do |f| 
+						.search-box
+							=f.text_field :test, :placeholder => "Search for items" 
+
 				
 					
 				

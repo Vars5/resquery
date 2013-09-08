@@ -1,12 +1,16 @@
-=form_for [@group, @article] do |f|
-	= f.text_field :name, :placeholder => "Name"
-	= render 'layouts/wysihtml5'
-	= f.text_area :body, :placeholder => "Text", :id => 'wysihtml5-textarea' 
-	- #f.hidden_field :user_id, :value => current_user.id
-	= f.text_field :topic_id, :placeholder => "Topic Id"
-	= f.hidden_field :group_id, :value => (params[:group_id])	
-	= f.fields_for :articletopics do |f|
-		= ff.hidden_field :user_id, :value => current_user.id
-		= ff.hidden_field :parent, :value => true
-		= ff.hidden_field :article_id, :value => f.id
-	=f.submit
+.new-article
+	.row-fluid
+		.span8
+			=form_for [@group, @article] do |f|
+				.new-article-title
+					= f.text_area :name, :placeholder => "Type your title"
+				= render 'layouts/wysihtml5'
+				= f.text_area :body, :placeholder => "Start Typing your article here", :id => 'wysihtml5-textarea', :class => "new-article-area" 
+				- #f.hidden_field :user_id, :value => current_user.id
+				= f.text_field :topic_id, :placeholder => "Topic Id"
+				= f.hidden_field :group_id, :value => (params[:group_id])	
+				= f.fields_for :articletopics do |f|
+					= ff.hidden_field :user_id, :value => current_user.id
+					= ff.hidden_field :parent, :value => true
+					= ff.hidden_field :article_id, :value => f.id
+				=f.submit

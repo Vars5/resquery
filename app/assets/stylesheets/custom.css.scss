@@ -54,7 +54,7 @@ body {
 /* bootstrap responsive adjustments*/
 	@media (min-width: 1200px) {
 	  .span12, .container {
-	    width: 940px;
+	    width: 1170;
 	  }
 	}
 
@@ -76,6 +76,7 @@ input {
 }
 
 textarea {
+	resize:none;
 	width:95%;
 	border:1px solid $aqua !important;
 }
@@ -434,7 +435,7 @@ textarea {
 		margin-top:70px;
 		border-left:10px solid $light-teal;
 		font-weight:700;
-		font-size:30px;
+		font-size:34px;
 		line-height:45px;
 		padding-left:$standard-padding;
 		margin-bottom:50px;
@@ -446,37 +447,7 @@ textarea {
 
 }
 
-
-
-
-
-
 /** other **/
-
-.link-feed-title{
-	background-color:$light-aqua;
-	padding:10px;
-	border-top:$aqua 5px solid;
-	border-bottom:$aqua 1px dotted;
-}
-
-.link-feed{
-
-	background-color:$fade-aqua;
-	padding:10px;
-	a{
-		line-height:1px;
-	}
-	a:hover{
-		text-decoration:none;
-	}
-	.tiny-text{
-		line-height:10px;
-		padding-bottom:15px;
-	}
-
-}
-
 
 .strikethrough{
 	text-decoration:line-through;
@@ -515,11 +486,14 @@ textarea.wysihtml5:focus{
 
 
 .show-discussion{
-	font-size:16px;
-	line-height:25px;
+	font-size:18px;
+	line-height:29px;
 	li{
 		line-height:30px;
 		padding-bottom:20px;
+	}
+	p{
+		cursor:pointer;
 	}
 
 }
@@ -584,8 +558,9 @@ textarea.wysihtml5:focus{
 
 
 .search-box{
+	padding-top:30px;
 	input{
-		border:1px solid $teal !important;
+		border:1px solid $aqua !important;
 		padding:10px 0px 10px 10px;
 	}
 }
@@ -622,4 +597,62 @@ textarea.wysihtml5:focus{
 
 #test-box{
 	position:relative;
+}
+
+.article-note-box{
+	textarea {
+		background-color: $light-teal;
+		box-shadow:none;
+		font-size:14px;
+		border: 0px !important;
+		padding:0px !important;
+
+	}
+}
+
+.notes-area{
+	font-size:14px;
+	margin-left:-20px;
+	padding:15px;
+	background-color:$light-teal;
+	textarea{
+	line-height:21px !important;
+	}
+}
+
+.article-title-box{
+
+	font-size:16px;
+}
+
+.new-article-area {
+	padding:10px;
+	font-size:18px;
+	line-height:29px;
+	border: 0px !important;
+	padding:0px !important;
+	outline:none !important;
+	box-shadow:none !important;
+	background-color:$light-teal;
+
+}
+
+.new-article-title{
+	margin-top:70px;
+	border-left:10px solid $teal;
+	padding-left:$standard-padding;
+	margin-bottom:50px;
+	textarea{
+
+		line-height:47px;
+		border: 0px !important;
+		padding:0px !important;
+		outline:none !important;
+		box-shadow:none !important;
+		font-weight:700;
+		font-size:34px !important;
+		height:34px;
+		font-family: 'Noto Sans', sans-serif;	
+	}
+
 }

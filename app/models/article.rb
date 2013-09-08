@@ -19,7 +19,7 @@ class Article < ActiveRecord::Base
   
   def add_ids_to_paragraphs
     self.body.scan(/<p>.*?<\/p>/).each_with_index do |paragraph,index|
-      self.body = self.body.sub(paragraph, paragraph.sub("<p>","<p id='paragraph_#{index+1}'>"))
+      self.body = self.body.sub(paragraph, paragraph.sub("<p>","<p id='#{index+1}_'>"))
     end
   end
 
