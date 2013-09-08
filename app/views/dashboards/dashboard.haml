@@ -10,7 +10,7 @@
 								%b
 									%p(class="group-name")= group.name
 								%p(class="box-text")
-									= group.description
+									= simple_format(group.description)
 
 	-if @groups.count > 3
 		.row-fluid	
@@ -22,7 +22,7 @@
 								%b
 									%p(class="group-name")= group.name
 								%p(class="box-text")
-									= group.description
+									= simple_format(group.description)
 
 	
 	-if false

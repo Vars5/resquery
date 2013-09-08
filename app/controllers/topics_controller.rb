@@ -20,6 +20,17 @@ class TopicsController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:group_id])
+    @topic = Topic.find(params[:id])
+  end
+  
+  def update
+    @group = Group.find(params[:group_id])
+    @topic = Topic.find(params[:id])
+    @topic.update_attributes(params[:topic])
+    if @topic.save
+      redirect_to @group
+    end
   end
 
 

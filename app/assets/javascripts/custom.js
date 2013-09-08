@@ -3,9 +3,10 @@ $(document).ready(function(){
 	//Discussion Page Items
 	//Make the background teal & text white on click
 	$('.discussion-page-overhead p, .dicussion-page-overhead li').click(function(){
-		$(this).css("background-color","#00D0A1");
-		$(this).css("color","#ffffff");
+		//$(this).css("background-color","#00D0A1");
+		//$(this).css("color","#ffffff");
 		//$(this).width($(this).width()+400)
+		$(this).css("background-color","#EDFCF8");
 	})
 	
 	//On mousehover, background becomes light-teal
@@ -39,15 +40,20 @@ $(document).ready(function(){
 	})
 	
 	//On page load, have the browser automatically focus on the search-box so users can start searching asap
-	$(function(){
-	    $(".search-box input").focus();
-	});
 
+	$(".search-box input").focus();
+	$(" #article_name").focus();
+
+	//On clicking a paragraph, set the comment box ready
 	$(".show-discussion p").click(function(){
-		show_form(this)
-		move_form("#test_box", this)
+		show_form(this);
+		move_form("#test_box", this);
+		//resize_form(this);
+		set_paragraph_to_form(this);
+		$("#comment-area").focus();
 	})
 
+	$(' textarea').autosize();
 
 })
 
@@ -59,11 +65,11 @@ function show_form(paragraph){
 function move_form(form, paragraph){
 	var vertical_difference = get_vertical_difference(form, paragraph);
 	var animate_box = vertical_difference
-	$('input[name="test[test]"]').val(vertical_difference)
+
 	$(form).css("position","relative");
 	$(form).animate({
 		top: "-="+vertical_difference+"px"
-	  }, 300);
+	  }, 0);
 	
 }
 
@@ -74,3 +80,11 @@ function get_vertical_difference(box, paragraph){
 	return vertical_difference;
 }
 
+function resize_form(paragraph){
+	var paragraph_height = $(paragraph).height();
+	$('.article-note-box textarea').css("height", paragraph_height+"px").trigger('autosize.resize');
+}
+
+function set_paragraph_to_form(paragraph){
+	$('#paragraph-value').val($(paragraph).attr("id"));
+}

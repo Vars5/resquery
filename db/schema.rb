@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130901085824) do
+ActiveRecord::Schema.define(:version => 20130907090021) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20130901085824) do
     t.integer  "rgt"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+    t.string   "paragraph_id"
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
@@ -57,7 +58,6 @@ ActiveRecord::Schema.define(:version => 20130901085824) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "link"
-    t.string   "action"
     t.string   "question"
   end
 
