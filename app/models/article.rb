@@ -23,5 +23,19 @@ class Article < ActiveRecord::Base
     end
   end
 
+  after_create :enqueue_create_document_job
+  #after_destroy :enqueue_delete_document_job
+
+  private
+
+  def enqueue_create_document_job
+    Delayed::Job.enqueue CreateSwiftypeDocumentJob.new(self.id)
+  end
+
+=begin
+  def enqueue_delete_document_job
+    DeleteSwiftypeDocumentJob.new(self.id)
+  end
+=end
 
 end
