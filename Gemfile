@@ -43,6 +43,12 @@ gem 'newrelic_rpm'
 #comments
 gem 'acts_as_commentable_with_threading'
 
+#search
+gem 'swiftype'
+gem 'delayed_job_active_record'
+
+
+gem 'foreman'
 
 gem 'intercom-rails', '~> 0.2.21'
 

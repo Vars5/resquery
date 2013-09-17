@@ -29,3 +29,10 @@
 								=link_to [@group, article] do  
 									%span(class="article-title-box")= article.name
 									%p(class="article-box-text")= strip_tags(truncate((article.body),length: 85))
+
+- if can? :manage, :all
+	.membership_invite_form
+		=form_for :invite, as: :memberships, url: memberships_path(:invite) do |f|
+			=f.email_field :email
+			=f.hidden_field :group_id, value: params[:id]
+			=f.submit "Invite Person"
