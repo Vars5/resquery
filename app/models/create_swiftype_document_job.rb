@@ -1,10 +1,10 @@
 class CreateSwiftypeDocumentJob < Struct.new(:article_id)
   def perform
     article = Article.find(article_id)
-    group = Group.find(article.group_id)
-    #topic = Topic.find(article.topic_id)
+    group = Group.find(article.group)
+    url = Rails.application.routes.url_helpers.group_article_url(group, article, :host => 'localhost:5000')
     
-    url = Rails.application.routes.url_helpers.group_articles_url(group, article, :host => 'localhost:5000')
+    Rails.logger.warn "Got #{group.inspect} as group for Article #{article.id}"
     
     engine = Swiftype::Engine.find('engine')
     type = engine.document_type('article')

@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
   has_many :articletopics
   has_many :topics, through: :articletopics
 
-  belongs_to :groups
+  belongs_to :group
 
   accepts_nested_attributes_for :articletopics
   
