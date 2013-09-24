@@ -10,27 +10,19 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 	
-	</head>
-	
-
-	
+	</head>	
 	<body>
-	
-
-		
+	<!-- Hi There! Thanks for looking under the hood! -->
+	<!-- We hope that Resquery helps you !-->
 	<% if signed_in? %>
-
 		<%= render 'layouts/signed_in_header'%>
-		
 		<%# tests with full width images outside of container%>
 		<%# if @pageimage != nil %>
 		<% if @show_hero == true %>
 			<%= render 'layouts/page_image'%>
 		<% end %>
 		<%# end %>
-		
-		<% if @show_dashboard == true%>
-		
+		<% if @show_dashboard == true %> 
 			<%= render 'layouts/dashboard_top'%>
 		<% end %>
 		
@@ -43,11 +35,9 @@
 		</div>
 
 	<% else %>	
-
 		<%=render 'layouts/signed_out_header'%>
 		<%= yield %>			
 		<%=render 'layouts/footer'%>
-
 	<% end %>
 
 	<script>
@@ -56,7 +46,7 @@
 	    stylesheets:  "<%= stylesheet_path('wysiwyg') %>", // optional, css to style the editor's content
 		 useLineBreaks: false,
 
-	    parserRules:  wysihtml5ParserRules // defined in parser rules set,
+	    parserRules:  advanced // defined in parser rules set,
 
 	  });
 	</script>

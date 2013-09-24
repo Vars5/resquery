@@ -30,6 +30,7 @@ $aqua-midpoint:#73B370;
 $standard-padding:40px;
 $orange: #E8A00C;
 $dark-blue:#07376E;
+$fade-grey: #F4F4F4;
 
 $light-teal: #EDFCF8;
 $teal: #00D0A1;
@@ -140,11 +141,10 @@ textarea {
 
 .signed-in-header{
 	padding:2px 0px;
-	height:20px;
-	background-color:$aqua;
+	background-color:$fade-grey;
 	font-size:10px;
 	a{
-		color:$light-aqua;
+		color:$aqua;
 	}
 }
 
@@ -165,8 +165,7 @@ textarea {
 	img {
 		padding-top:30px;
 		padding-bottom:20px;
-		height:39px;
-		width:143px;
+		height:33px;
 	}
 }
 
@@ -342,7 +341,6 @@ textarea {
 .main-title-text{
 	/* this shadow is for when we implement hero areas*/
 	text-shadow: 0 1px 7px #000;
-
 	padding-top:90px;
 	font-size:25px;
 	font-weight:700;
@@ -561,7 +559,9 @@ textarea.wysihtml5:focus{
 	padding-top:30px;
 	input{
 		border:1px solid $aqua !important;
-		padding:10px 0px 10px 10px;
+		margin-top:5px;
+		padding:5px 0px 5px 10px;
+		width:90%;
 	}
 }
 
@@ -655,4 +655,8 @@ textarea.wysihtml5:focus{
 		font-family: 'Noto Sans', sans-serif;	
 	}
 
+}
+
+.header-items{
+	padding-top:40px;
 }

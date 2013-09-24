@@ -209,9 +209,6 @@ DEPENDENCIES
   sass-rails (~> 3.2)
   simple_form
   sqlite3
-
-  twitter-bootstrap-rails
-
   swiftype
-
+  twitter-bootstrap-rails
   uglifier
