@@ -1,17 +1,10 @@
-.hidden
-	%h3(class="main-title-text")= @group.name 
-
-
-.search-area.hidden
-	.row-fluid
-		.span8
-			= @group.description
-		.span4
-			.pull-right
-				=form_for :test do |f|
-					.search-box
-						=f.text_field :test, :placeholder => "Search for items"
-
+-if can? :manage, :group
+	
+	%ul(class="inline") 
+		%li= link_to "Add a topic", new_group_topic_path(params[:id])
+		%li= link_to "Add an article", new_group_article_path(params[:id])
+	
+	.pad-top	
 
 .test
 	- @topics.each do |topic|

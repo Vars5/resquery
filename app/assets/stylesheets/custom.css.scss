@@ -38,6 +38,8 @@ $teal: #00D0A1;
 $mustard: #E8A00C;
 $light-mustard: #F7DCA7;
 
+$ft-color: #fff1e0;
+
 $border-width:15px;
 
 @in-case{ font-family: 'Libre Baskerville', serif;}
@@ -659,4 +661,29 @@ textarea.wysihtml5:focus{
 
 .header-items{
 	padding-top:40px;
+}
+
+.dashboard-list{
+	font-size:14px;
+}
+
+.grey-text{
+	color:$light-grey;
+}
+
+.list-title{
+	font-size:16px;
+}
+
+.recommended-articles{
+	background-color:$mustard;
+	color:white;
+	padding:2px 5px;
+	font-size:10px;
+	text-align:center;
+}
+
+.recommendation-one{
+	background-color: $ft-color;
+	padding:15px 10px;
 }

@@ -1,29 +1,17 @@
-.dashboard
-
-	-if @groups.count != 0
-		.row-fluid	
-			-@groups[0..2].each do |group|
-				.span4
-					=link_to group do
-						.box(style="background-image: url('http://distilleryimage3.ak.instagram.com/889cab60cebd11e1985822000a1d011d_7.jpg');")
-							.box-info
-								%b
-									%p(class="group-name")= group.name
-								%p(class="box-text")
-									= simple_format(group.description)
-
-	-if @groups.count > 3
-		.row-fluid	
-			-@groups[3..5].each do |group|
-				.span4
-					=link_to group do 
-						.box
-							.box-info
-								%b
-									%p(class="group-name")= group.name
-								%p(class="box-text")
-									= simple_format(group.description)
-
+.pad-top
+	.row-fluid
+		.span2.dashboard-list
+			%strong Your Groups
+			%ul(class="unstyled")
+				%br
+				- @groups.each do |group|
+					%li= link_to group.name, group
+					%br
+		.span6
+		
+			= render 'layouts/test_info'
+					
+			
 	
 	-if false
 		.row-fluid
@@ -43,4 +31,7 @@
 						|
 						=link_to 'hide', deactivate_notification_path(notification)
 				
+				
+.pad-top
+.pad-top
 				
