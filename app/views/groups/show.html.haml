@@ -1,9 +1,11 @@
 -if can? :manage, :group
 	
-	%ul(class="inline") 
-		%li= link_to "Add a topic", new_group_topic_path(params[:id])
-		%li= link_to "Add an article", new_group_article_path(params[:id])
-	
+	%hr
+	.center-alignment
+		%ul(class="inline") 
+			%li= link_to "Add a topic", new_group_topic_path(params[:id])
+			%li= link_to "Add an article", new_group_article_path(params[:id])
+	%hr	
 	.pad-top	
 
 .test

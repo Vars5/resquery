@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     @article.articletopics.build
     
     if @article.save
-      redirect_to root_path
+      render @article
     end
   end
   
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.update_attributes(params[:article])
     if @article.save
-      redirect_to root_path
+      render @article
     end
   end
 end

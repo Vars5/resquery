@@ -421,10 +421,7 @@ textarea {
 		border-left:10px solid $light-teal;
 	}
 
-	li {
-		padding: 15px 30px 15px $standard-padding;
-		border-left:10px solid $light-teal;
-	}
+
 	
 	p:hover{
 		border-left:10px solid $teal;
@@ -569,8 +566,8 @@ textarea.wysihtml5:focus{
 
 .full-width-background{
 	color:white;
-	height:290px;
-	margin-bottom:60px;
+	min-height:290px;
+	margin-bottom:40px;
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-color:#a5a5a5;	
@@ -686,4 +683,19 @@ textarea.wysihtml5:focus{
 .recommendation-one{
 	background-color: $ft-color;
 	padding:15px 10px;
+}
+
+#slides{
+	font-size:10px;
+	ul{
+		float:right;
+	}
+	li{
+		display:inline;
+		padding-left:10px;
+	}
+	.slidesjs-next{
+		padding-left:10px;
+	}
+	
 }

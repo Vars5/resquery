@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(:version => 20130908061148) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "link"
-    t.string   "action"
     t.string   "question"
   end
 
