@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  attr_accessible :body, :name, :articletopic_attributes, :user_id, :topic_id, :group_id
+  attr_accessible :body, :name, :articletopic_attributes, :user_id, :topic_id, :group_id, :large_slides
 
   has_many :articletopics
   has_many :topics, through: :articletopics

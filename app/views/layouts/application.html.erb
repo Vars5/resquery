@@ -21,6 +21,9 @@
 		<% if @show_hero == true %>
 			<%= render 'layouts/page_image'%>
 		<% end %>
+		<% if !@large_slides.blank?  %>
+			<%= resquery_format(@large_slides, {}, :sanitize => false)%>
+		<%end %>
 		<%# end %>
 		<%# if @show_dashboard == true %>
 			<%#= render 'layouts/dashboard_top'%>

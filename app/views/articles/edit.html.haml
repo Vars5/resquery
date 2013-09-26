@@ -1,6 +1,7 @@
 =form_for [@group, @article] do |f|
 	= f.text_field :name, :placeholder => "Name"
 	= render 'layouts/wysihtml5'
+	= f.text_area :large_slides, :placeholder => "Large Slides Code - use #large_slides"
 	= f.text_area :body, :placeholder => "Text", :id => 'wysihtml5-textarea' 
 	- #f.hidden_field :user_id, :value => current_user.id
 	= f.text_field :topic_id, :placeholder => "Topic Id"

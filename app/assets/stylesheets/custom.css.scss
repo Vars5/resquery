@@ -430,7 +430,7 @@ textarea {
 
 	.discussion-heading{
 		margin-top:70px;
-		border-left:10px solid $light-teal;
+		border-left:10px solid $teal;
 		font-weight:700;
 		font-size:34px;
 		line-height:45px;
@@ -438,9 +438,9 @@ textarea {
 		margin-bottom:50px;
 	}
 
-	.discussion-heading:hover{
-		border-left:10px solid $teal;
-	}
+	//.discussion-heading:hover{
+	//	border-left:10px solid $teal;
+	//}
 
 }
 
@@ -685,7 +685,22 @@ textarea.wysihtml5:focus{
 	padding:15px 10px;
 }
 
-#slides{
+#minislides{
+	font-size:10px;
+	ul{
+		float:right;
+	}
+	li{
+		display:inline;
+		padding-left:10px;
+	}
+	.slidesjs-next{
+		padding-left:10px;
+	}
+	
+}
+
+#largeslides{
 	font-size:10px;
 	ul{
 		float:right;

@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comments = @article.comment_threads.order('created_at asc')
     @new_comment = Comment.build_from(@article, current_user, " ", " ")
+    @large_slides = @article.large_slides
   end
 
   def edit
