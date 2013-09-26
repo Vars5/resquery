@@ -701,9 +701,10 @@ textarea.wysihtml5:focus{
 }
 
 #largeslides{
-	font-size:10px;
+	font-size:13px;
 	ul{
 		float:right;
+		padding-right:125px;
 	}
 	li{
 		display:inline;
@@ -712,5 +713,7 @@ textarea.wysihtml5:focus{
 	.slidesjs-next{
 		padding-left:10px;
 	}
-	
+	.slidesjs-previous{
+		padding-left:125px;
+	}
 }
