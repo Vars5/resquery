@@ -5,6 +5,7 @@
 				.new-article-title
 					= f.text_area :name, :placeholder => "Type your title"
 				= render 'layouts/wysihtml5'
+				= f.text_area :large_slides, :placeholder => "Large Slides Code"
 				= f.text_area :body, :placeholder => "Start Typing your article here", :id => 'wysihtml5-textarea', :class => "new-article-area" 
 				- #f.hidden_field :user_id, :value => current_user.id
 				= f.text_field :topic_id, :placeholder => "Topic Id"

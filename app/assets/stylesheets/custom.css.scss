@@ -30,12 +30,15 @@ $aqua-midpoint:#73B370;
 $standard-padding:40px;
 $orange: #E8A00C;
 $dark-blue:#07376E;
+$fade-grey: #F4F4F4;
 
 $light-teal: #EDFCF8;
 $teal: #00D0A1;
 
 $mustard: #E8A00C;
 $light-mustard: #F7DCA7;
+
+$ft-color: #fff1e0;
 
 $border-width:15px;
 
@@ -54,7 +57,7 @@ body {
 /* bootstrap responsive adjustments*/
 	@media (min-width: 1200px) {
 	  .span12, .container {
-	    width: 1170;
+	    width: 1100px;
 	  }
 	}
 
@@ -140,11 +143,10 @@ textarea {
 
 .signed-in-header{
 	padding:2px 0px;
-	height:20px;
-	background-color:$aqua;
+	background-color:$fade-grey;
 	font-size:10px;
 	a{
-		color:$light-aqua;
+		color:$aqua;
 	}
 }
 
@@ -165,8 +167,7 @@ textarea {
 	img {
 		padding-top:30px;
 		padding-bottom:20px;
-		height:39px;
-		width:143px;
+		height:33px;
 	}
 }
 
@@ -342,7 +343,6 @@ textarea {
 .main-title-text{
 	/* this shadow is for when we implement hero areas*/
 	text-shadow: 0 1px 7px #000;
-
 	padding-top:90px;
 	font-size:25px;
 	font-weight:700;
@@ -421,10 +421,7 @@ textarea {
 		border-left:10px solid $light-teal;
 	}
 
-	li {
-		padding: 15px 30px 15px $standard-padding;
-		border-left:10px solid $light-teal;
-	}
+
 	
 	p:hover{
 		border-left:10px solid $teal;
@@ -433,7 +430,7 @@ textarea {
 
 	.discussion-heading{
 		margin-top:70px;
-		border-left:10px solid $light-teal;
+		border-left:10px solid $teal;
 		font-weight:700;
 		font-size:34px;
 		line-height:45px;
@@ -441,9 +438,9 @@ textarea {
 		margin-bottom:50px;
 	}
 
-	.discussion-heading:hover{
-		border-left:10px solid $teal;
-	}
+	//.discussion-heading:hover{
+	//	border-left:10px solid $teal;
+	//}
 
 }
 
@@ -486,8 +483,8 @@ textarea.wysihtml5:focus{
 
 
 .show-discussion{
-	font-size:18px;
-	line-height:29px;
+	font-size:16px;
+	line-height:26px;
 	li{
 		line-height:30px;
 		padding-bottom:20px;
@@ -541,13 +538,16 @@ textarea.wysihtml5:focus{
 }
 
 .article-box{
-	padding:20px 5px 5px;
+	padding:30px 5px 5px;
 	text-align:center;
 	margin-top:10px;
 	width:100%;
 	height:140px;
-	background-color: $background-grey;
+	background-color: $fade-grey;
 	border-radius: 4px;
+	a{
+		color:$aqua;
+	}
 }
 
 .test{
@@ -561,14 +561,16 @@ textarea.wysihtml5:focus{
 	padding-top:30px;
 	input{
 		border:1px solid $aqua !important;
-		padding:10px 0px 10px 10px;
+		margin-top:5px;
+		padding:5px 0px 5px 10px;
+		width:90%;
 	}
 }
 
 .full-width-background{
 	color:white;
-	height:290px;
-	margin-bottom:60px;
+	min-height:290px;
+	margin-bottom:40px;
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-color:#a5a5a5;	
@@ -578,6 +580,7 @@ textarea.wysihtml5:focus{
 .article-box-text{
 	font-size:11px;
 	line-height:14px;
+	padding-top:8px;
 }
 
 .second-area{
@@ -621,8 +624,8 @@ textarea.wysihtml5:focus{
 }
 
 .article-title-box{
-
 	font-size:16px;
+
 }
 
 .new-article-area {
@@ -656,3 +659,66 @@ textarea.wysihtml5:focus{
 	}
 
 }
+
+.header-items{
+	padding-top:40px;
+}
+
+.dashboard-list{
+	font-size:14px;
+}
+
+.grey-text{
+	color:$light-grey;
+}
+
+.list-title{
+	font-size:16px;
+}
+
+.recommended-articles{
+	background-color:$mustard;
+	color:white;
+	padding:2px 5px;
+	font-size:10px;
+	text-align:center;
+}
+
+.recommendation-one{
+	background-color: $ft-color;
+	padding:15px 10px;
+}
+
+#minislides{
+	font-size:10px;
+	ul{
+		float:right;
+	}
+	li{
+		display:inline;
+		padding-left:10px;
+	}
+	.slidesjs-next{
+		padding-left:10px;
+	}
+	
+}
+
+#largeslides{
+	font-size:13px;
+	ul{
+		float:right;
+		padding-right:125px;
+	}
+	li{
+		display:inline;
+		padding-left:10px;
+	}
+	.slidesjs-next{
+		padding-left:10px;
+	}
+	.slidesjs-previous{
+		padding-left:125px;
+	}
+}
+

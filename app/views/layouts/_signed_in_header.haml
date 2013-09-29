@@ -1,40 +1,41 @@
 .signed-in-header
 	.container
 		.row-fluid
-			.span12
+			.span2
 				.hidden-phone
+					= link_to image_tag('logo.png'), root_path, :class => "signed-in-logo"
 					&nbsp &nbsp	
 					- link_to 'resQuery' , root_path
 					.pull-right
-						- if current_user.role == "admin" 
+
+						
+			.span6
+				= form_for :test do |f| 
+					.search-box
+						=f.text_field :test, :placeholder => "Search for items"			
+			.span4
+				.pull-right.header-items
+					- if current_user.role == "admin" 
+						=link_to 'Admin', admin_path
+						&nbsp &nbsp
+					= link_to 'Account Settings' , edit_user_registration_path 
+					&nbsp &nbsp
+					= link_to 'Log Out', destroy_user_session_path, :method =>"DELETE"
+				
+					.visible-phone
+						&nbsp &nbsp	
+						= link_to 'resQuery' , root_path
+						&nbsp &nbsp					
+						= link_to 'My Groups', root_path
+						- if current_user.role == "admin"
+							&nbsp &nbsp		 
 							=link_to 'Admin', 'admin_path'
 						&nbsp &nbsp
 						= link_to 'Account Settings' , edit_user_registration_path 
 						&nbsp &nbsp
 						= link_to 'Log Out', destroy_user_session_path, :method =>"DELETE"
-				.visible-phone
-					&nbsp &nbsp	
-					= link_to 'resQuery' , root_path
-					&nbsp &nbsp					
-					= link_to 'My Groups', root_path
-					- if current_user.role == "admin"
-						&nbsp &nbsp		 
-						=link_to 'Admin', 'admin_path'
-					&nbsp &nbsp
-					= link_to 'Account Settings' , edit_user_registration_path 
-					&nbsp &nbsp
-					= link_to 'Log Out', destroy_user_session_path, :method =>"DELETE"
+				
 					
-.second-area
-	.container.hidden-phone
-		.row-fluid
-			.span8
-				= link_to image_tag('logo.png'), root_path, :class => "signed-in-logo"
-			.span4
-				.pull-right
-					= form_for :test do |f| 
-						.search-box
-							=f.text_field :test, :placeholder => "Search for items" 
 
 				
 					
