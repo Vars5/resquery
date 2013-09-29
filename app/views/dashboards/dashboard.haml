@@ -1,12 +1,16 @@
 .pad-top
 	.row-fluid
 		.span2.dashboard-list
-			%strong Your Groups
+			%strong
+				Your
+				%br Knowledge Spaces
 			%ul(class="unstyled")
 				%br
 				- @groups.each do |group|
 					%li= link_to group.name, group
 					%br
+			%strong= link_to "Your Notes", comments_path
+			
 		.span6
 		
 			= render 'layouts/test_info'

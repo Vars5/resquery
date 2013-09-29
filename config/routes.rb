@@ -24,7 +24,7 @@ Resquery::Application.routes.draw do
   
   resources :memberships, only: [:create, :update, :destroy]
 
-  resources :comments, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy, :index]
   resources :links, only: [:create, :destroy]
   
   resources :notifications do
