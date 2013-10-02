@@ -36,8 +36,9 @@ $(document).ready(function(){
 	})
 	
 	$('.article-box').mouseleave(function(){
-		$(this).css("background-color","#00D0A1");
+		$(this).css("background-color","#8BEAD4");
 	})
+	
 	
 	//On page load, have the browser automatically focus on the search-box so users can start searching asap
 
