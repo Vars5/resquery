@@ -34,8 +34,8 @@ gem "bootstrap-will_paginate"
 gem "haml"
 gem 'haml-rails'
 gem 'simple_form'
-gem 'wysihtml5-rails'
-gem 'bootstrap-rails'
+
+gem "twitter-bootstrap-rails"
 
 
 gem 'newrelic_rpm'

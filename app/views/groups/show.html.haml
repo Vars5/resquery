@@ -1,17 +1,12 @@
-.hidden
-	%h3(class="main-title-text")= @group.name 
-
-
-.search-area.hidden
-	.row-fluid
-		.span8
-			= @group.description
-		.span4
-			.pull-right
-				=form_for :test do |f|
-					.search-box
-						=f.text_field :test, :placeholder => "Search for items"
-
+-if can? :manage, :group
+	
+	%hr
+	.center-alignment
+		%ul(class="inline") 
+			%li= link_to "Add a topic", new_group_topic_path(params[:id])
+			%li= link_to "Add an article", new_group_article_path(params[:id])
+	%hr	
+	.pad-top	
 
 .test
 	- @topics.each do |topic|
@@ -27,7 +22,7 @@
 						- group.each do |article|
 							.span3.article-box
 								=link_to [@group, article] do  
-									%span(class="article-title-box")= article.name
+									%strong(class="article-title-box")= article.name
 									%p(class="article-box-text")= strip_tags(truncate((article.body),length: 85))
 
 - if can? :manage, :all

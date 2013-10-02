@@ -2,8 +2,8 @@ class Membership < ActiveRecord::Base
   attr_accessible :leader, :owner, :group_id, :user_id, :group, :user
   
   #association
-  belongs_to :group
-  belongs_to :user
+  belongs_to :group, dependent: :destroy
+  belongs_to :user, dependent: :destroy
   
   def self.create_or_invite(invite, current_user)
     group = Group.find(invite[:group_id])

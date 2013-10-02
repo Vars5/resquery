@@ -1,5 +1,6 @@
-= simple_form_for @group do |f|
-	= f.input :name, required: true
+= simple_form_for @group do |f|	
+	.new-article-title
+		= f.input :name, required: true, as: :text
 	= f.input :description
 	= f.hidden_field :user_id, :value => current_user.id
 	= f.fields_for :memberships do |membership|
